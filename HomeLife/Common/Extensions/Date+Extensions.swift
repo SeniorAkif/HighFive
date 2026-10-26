@@ -1,45 +1,48 @@
 import Foundation
 
 extension Date {
-    /// Türkçe göreceli tarih açıklaması ("Bugün", "Yarın", "Dün", "2 gün sonra", vb.)
+    /// Dile duyarlı göreceli tarih açıklaması ("Bugün" / "Today", "Yarın" / "Tomorrow", vb.)
     public var relativeFormattedText: String {
+        let locale = LanguageManager.shared.locale
         let calendar = Calendar.current
+        let isTurkish = locale.identifier.starts(with: "tr")
+
         if calendar.isDateInToday(self) {
-            return "Bugün"
+            return isTurkish ? "Bugün" : "Today"
         } else if calendar.isDateInTomorrow(self) {
-            return "Yarın"
+            return isTurkish ? "Yarın" : "Tomorrow"
         } else if calendar.isDateInYesterday(self) {
-            return "Dün"
+            return isTurkish ? "Dün" : "Yesterday"
         } else {
             let startToday = calendar.startOfDay(for: Date())
             let startSelf = calendar.startOfDay(for: self)
             let diff = calendar.dateComponents([.day], from: startToday, to: startSelf).day ?? 0
             
             if diff > 0 && diff < 7 {
-                return "\(diff) gün sonra"
+                return isTurkish ? "\(diff) gün sonra" : "in \(diff) days"
             } else if diff < 0 && diff > -7 {
-                return "\(-diff) gün önce"
+                return isTurkish ? "\(-diff) gün önce" : "\(-diff) days ago"
             } else {
                 let formatter = DateFormatter()
-                formatter.locale = Locale(identifier: "tr_TR")
+                formatter.locale = locale
                 formatter.dateFormat = "d MMMM"
                 return formatter.string(from: self)
             }
         }
     }
 
-    /// Tam tarih ve saat ("28 Ekim Salı, 14:30")
+    /// Tam tarih ve saat ("28 Ekim Salı, 14:30" / "28 October Tuesday, 14:30")
     public var fullFormattedText: String {
         let formatter = DateFormatter()
-        formatter.locale = Locale(identifier: "tr_TR")
+        formatter.locale = LanguageManager.shared.locale
         formatter.dateFormat = "d MMMM EEEE, HH:mm"
         return formatter.string(from: self)
     }
 
-    /// Kısa gün ve ay ("28 Eki")
+    /// Kısa gün ve ay ("28 Eki" / "28 Oct")
     public var shortDateText: String {
         let formatter = DateFormatter()
-        formatter.locale = Locale(identifier: "tr_TR")
+        formatter.locale = LanguageManager.shared.locale
         formatter.dateFormat = "d MMM"
         return formatter.string(from: self)
     }
@@ -47,6 +50,7 @@ extension Date {
     /// Sadece saat ("18:00")
     public var timeOnlyText: String {
         let formatter = DateFormatter()
+        formatter.locale = LanguageManager.shared.locale
         formatter.dateFormat = "HH:mm"
         return formatter.string(from: self)
     }

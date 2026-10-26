@@ -1,10 +1,15 @@
 import SwiftUI
 
 public struct GuestVisitRowView: View {
+    @ObservedObject private var languageManager = LanguageManager.shared
     public let visit: GuestVisit
     public let host: Roommate?
     public let onStatusChange: (GuestVisitStatus) -> Void
     public let onDelete: () -> Void
+
+    private var isTurkish: Bool {
+        LanguageManager.shared.locale.identifier.starts(with: "tr")
+    }
 
     public init(
         visit: GuestVisit,
@@ -30,7 +35,7 @@ public struct GuestVisitRowView: View {
                                 .foregroundColor(.primary)
 
                             if visit.guestCount > 1 {
-                                Text("\(visit.guestCount) Kişi")
+                                Text(isTurkish ? "\(visit.guestCount) Kişi" : "\(visit.guestCount) Guests")
                                     .font(.caption2)
                                     .fontWeight(.semibold)
                                     .padding(.horizontal, 6)
@@ -70,7 +75,7 @@ public struct GuestVisitRowView: View {
                                     onStatusChange(status)
                                 } label: {
                                     HStack {
-                                        Text(status.rawValue)
+                                        Text(status.localizedTitle)
                                         if visit.status == status {
                                             Image(systemName: "checkmark")
                                         }
@@ -84,7 +89,7 @@ public struct GuestVisitRowView: View {
                         }
                     } label: {
                         StatusPillView(
-                            text: visit.status.rawValue,
+                            text: visit.status.localizedTitle,
                             color: Color(hex: visit.status.badgeColorHex),
                             style: .subtle
                         )
@@ -110,9 +115,15 @@ public struct GuestVisitRowView: View {
                             .font(.caption)
                             .foregroundColor(visit.isOvernight ? AppTheme.secondary : AppTheme.warning)
 
-                        Text(visit.isOvernight ? "Yatılı (\(visit.durationInDays) gece)" : "Günübirlik")
-                            .font(.caption)
-                            .foregroundColor(.secondary)
+                        if visit.isOvernight {
+                            Text(isTurkish ? "Yatılı (\(visit.durationInDays) gece)" : "Overnight (\(visit.durationInDays) \(visit.durationInDays == 1 ? "night" : "nights"))")
+                                .font(.caption)
+                                .foregroundColor(.secondary)
+                        } else {
+                            Text(isTurkish ? "Günübirlik" : "Day Visit")
+                                .font(.caption)
+                                .foregroundColor(.secondary)
+                        }
                     }
 
                     Spacer()
@@ -125,17 +136,23 @@ public struct GuestVisitRowView: View {
                             .font(.caption2)
                             .foregroundColor(.secondary)
 
-                        Text("Kalacağı Yer: \(visit.stayLocation)")
-                            .font(.caption2)
-                            .foregroundColor(.secondary)
+                        HStack(spacing: 4) {
+                            Text("Kalacağı Yer:")
+                            Text(visit.stayLocation)
+                        }
+                        .font(.caption2)
+                        .foregroundColor(.secondary)
                     }
 
                     if !visit.notes.isEmpty {
-                        Text("Not: \(visit.notes)")
-                            .font(.caption)
-                            .foregroundColor(.secondary)
-                            .italic()
-                            .padding(.top, 2)
+                        HStack(spacing: 4) {
+                            Text("Not:")
+                            Text(visit.notes)
+                        }
+                        .font(.caption)
+                        .foregroundColor(.secondary)
+                        .italic()
+                        .padding(.top, 2)
                     }
                 }
             }

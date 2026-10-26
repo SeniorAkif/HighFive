@@ -2,6 +2,11 @@ import SwiftUI
 
 public struct DashboardView: View {
     @StateObject private var viewModel: DashboardViewModel
+    @ObservedObject private var languageManager = LanguageManager.shared
+
+    private var isTurkish: Bool {
+        LanguageManager.shared.locale.identifier.starts(with: "tr")
+    }
 
     public init(container: DependencyContainer) {
         _viewModel = StateObject(
@@ -141,7 +146,7 @@ public struct DashboardView: View {
         }
     }
 
-    private func statCard(title: String, count: String, icon: String, color: Color) -> some View {
+    private func statCard(title: LocalizedStringKey, count: String, icon: String, color: Color) -> some View {
         GlassCardView(padding: 12) {
             VStack(alignment: .leading, spacing: 8) {
                 HStack {
@@ -186,10 +191,13 @@ public struct DashboardView: View {
 
                             HStack(spacing: 6) {
                                 if let assignee = viewModel.roommate(for: chore.currentAssigneeId) {
-                                    Text("Sıra: \(assignee.displayName)")
-                                        .font(.caption)
-                                        .fontWeight(.medium)
-                                        .foregroundColor(Color(hex: assignee.avatarColorHex))
+                                    HStack(spacing: 4) {
+                                        Text("Sıra:")
+                                        Text(assignee.displayName)
+                                    }
+                                    .font(.caption)
+                                    .fontWeight(.medium)
+                                    .foregroundColor(Color(hex: assignee.avatarColorHex))
                                 }
                                 Text("•")
                                     .font(.caption2)
@@ -243,7 +251,7 @@ public struct DashboardView: View {
                                 Image(systemName: chore.assignmentType.iconName)
                                     .font(.system(size: 9))
                                     .foregroundColor(chore.assignmentType == .dedicated ? AppTheme.secondary : AppTheme.primary)
-                                Text("\(chore.assignmentType.rawValue) • \(chore.frequency.rawValue)")
+                                Text("\(chore.assignmentType.localizedTitle) • \(chore.frequency.localizedTitle)")
                                     .font(.caption2)
                                     .foregroundColor(.secondary)
                             }
@@ -303,16 +311,19 @@ public struct DashboardView: View {
                                         .font(.subheadline)
                                         .fontWeight(.semibold)
                                     if visit.guestCount > 1 {
-                                        Text("(\(visit.guestCount) kişi)")
+                                        Text(isTurkish ? "(\(visit.guestCount) kişi)" : "(\(visit.guestCount) guests)")
                                             .font(.caption2)
                                             .foregroundColor(.secondary)
                                     }
                                 }
 
                                 if let host = viewModel.roommate(for: visit.hostRoommateId) {
-                                    Text("Davet Eden: \(host.displayName)")
-                                        .font(.caption)
-                                        .foregroundColor(Color(hex: host.avatarColorHex))
+                                    HStack(spacing: 4) {
+                                        Text("Davet Eden:")
+                                        Text(host.displayName)
+                                    }
+                                    .font(.caption)
+                                    .foregroundColor(Color(hex: host.avatarColorHex))
                                 }
 
                                 Text("\(visit.startDate.shortDateText) - \(visit.endDate.shortDateText) (\(visit.stayLocation))")
@@ -323,7 +334,7 @@ public struct DashboardView: View {
                             Spacer()
 
                             StatusPillView(
-                                text: visit.isCurrentlyActive ? "Evde" : visit.startDate.relativeFormattedText,
+                                text: visit.isCurrentlyActive ? (isTurkish ? "Evde" : "At Home") : visit.startDate.relativeFormattedText,
                                 color: visit.isCurrentlyActive ? AppTheme.success : AppTheme.primary
                             )
                         }

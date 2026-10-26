@@ -34,14 +34,14 @@ public struct AddChoreSheet: View {
 
                     Picker("Kategori", selection: $category) {
                         ForEach(ChoreCategory.allCases) { cat in
-                            Label(cat.rawValue, systemImage: cat.iconName)
+                            Label(cat.localizedTitle, systemImage: cat.iconName)
                                 .tag(cat)
                         }
                     }
 
                     Picker("Tekrarlanma Sıklığı", selection: $frequency) {
                         ForEach(ChoreFrequency.allCases) { freq in
-                            Text(freq.rawValue).tag(freq)
+                            Text(freq.localizedTitle).tag(freq)
                         }
                     }
 
@@ -51,7 +51,7 @@ public struct AddChoreSheet: View {
                 Section(header: Text("Paylaşım & Sorumluluk Modeli")) {
                     Picker("Görev Türü", selection: $assignmentType) {
                         ForEach(ChoreAssignmentType.allCases) { type in
-                            Label(type.rawValue, systemImage: type.iconName)
+                            Label(type.localizedTitle, systemImage: type.iconName)
                                 .tag(type)
                         }
                     }

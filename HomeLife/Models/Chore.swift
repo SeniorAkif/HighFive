@@ -33,6 +33,18 @@ public enum ChoreCategory: String, Codable, CaseIterable, Identifiable {
         case .general: return "#3B82F6"     // Blue
         }
     }
+
+    public var localizedTitle: String {
+        let isTurkish = LanguageManager.shared.locale.identifier.starts(with: "tr")
+        switch self {
+        case .kitchen: return isTurkish ? "Mutfak" : "Kitchen"
+        case .trash: return isTurkish ? "Çöp" : "Trash"
+        case .bathroom: return isTurkish ? "Banyo & WC" : "Bathroom & WC"
+        case .livingRoom: return isTurkish ? "Salon" : "Living Room"
+        case .shopping: return isTurkish ? "Alışveriş" : "Shopping"
+        case .general: return isTurkish ? "Genel Temizlik" : "General Cleaning"
+        }
+    }
 }
 
 /// Görevin tekrarlanma sıklığı
@@ -45,6 +57,18 @@ public enum ChoreFrequency: String, Codable, CaseIterable, Identifiable {
     case asNeeded = "İhtiyaç Oldukça"
 
     public var id: String { rawValue }
+
+    public var localizedTitle: String {
+        let isTurkish = LanguageManager.shared.locale.identifier.starts(with: "tr")
+        switch self {
+        case .daily: return isTurkish ? "Her Gün" : "Daily"
+        case .everyOtherDay: return isTurkish ? "2 Günde Bir" : "Every 2 Days"
+        case .weekly: return isTurkish ? "Haftada 1" : "Weekly"
+        case .biweekly: return isTurkish ? "2 Haftada 1" : "Every 2 Weeks"
+        case .monthly: return isTurkish ? "Ayda 1" : "Monthly"
+        case .asNeeded: return isTurkish ? "İhtiyaç Oldukça" : "As Needed"
+        }
+    }
 
     /// Görev tamamlandığında bir sonraki bitiş tarihini hesaplar
     public func nextDueDate(from date: Date = Date()) -> Date {
@@ -77,6 +101,14 @@ public enum ChoreAssignmentType: String, Codable, CaseIterable, Identifiable {
         switch self {
         case .rotating: return "arrow.triangle.2.circlepath"
         case .dedicated: return "pin.fill"
+        }
+    }
+
+    public var localizedTitle: String {
+        let isTurkish = LanguageManager.shared.locale.identifier.starts(with: "tr")
+        switch self {
+        case .rotating: return isTurkish ? "Sıralı Döngü" : "Rotating Order"
+        case .dedicated: return isTurkish ? "Sabit Sorumlu" : "Dedicated Role"
         }
     }
 }

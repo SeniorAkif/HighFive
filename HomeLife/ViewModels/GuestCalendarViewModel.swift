@@ -7,6 +7,15 @@ public enum GuestCalendarFilter: String, CaseIterable, Identifiable {
     case all = "Tüm Kayıtlar"
 
     public var id: String { rawValue }
+
+    public var localizedTitle: String {
+        let isTurkish = LanguageManager.shared.locale.identifier.starts(with: "tr")
+        switch self {
+        case .upcoming: return isTurkish ? "Yaklaşanlar" : "Upcoming"
+        case .active: return isTurkish ? "Evde Olanlar" : "At Home"
+        case .all: return isTurkish ? "Tüm Kayıtlar" : "All"
+        }
+    }
 }
 
 @MainActor

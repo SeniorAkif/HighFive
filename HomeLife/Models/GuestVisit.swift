@@ -18,6 +18,16 @@ public enum GuestVisitStatus: String, Codable, CaseIterable, Identifiable {
         case .cancelled: return "#EF4444"  // Red
         }
     }
+
+    public var localizedTitle: String {
+        let isTurkish = LanguageManager.shared.locale.identifier.starts(with: "tr")
+        switch self {
+        case .upcoming: return isTurkish ? "Yaklaşan" : "Upcoming"
+        case .active: return isTurkish ? "Şu An Evde" : "At Home"
+        case .completed: return isTurkish ? "Ayrıldı" : "Departed"
+        case .cancelled: return isTurkish ? "İptal Edildi" : "Cancelled"
+        }
+    }
 }
 
 /// Eve gelecek misafiri temsil eden model

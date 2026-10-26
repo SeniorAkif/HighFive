@@ -23,9 +23,15 @@ public struct ChoreHistorySheet: View {
                     VStack(alignment: .leading, spacing: 6) {
                         Text(chore.title)
                             .font(.headline)
-                        Text("Kategori: \(chore.category.rawValue) • Sıklık: \(chore.frequency.rawValue)")
-                            .font(.caption)
-                            .foregroundColor(.secondary)
+                        HStack(spacing: 4) {
+                            Text("Kategori:")
+                            Text(chore.category.localizedTitle)
+                            Text("•")
+                            Text("Tekrarlanma Sıklığı:")
+                            Text(chore.frequency.localizedTitle)
+                        }
+                        .font(.caption)
+                        .foregroundColor(.secondary)
                     }
                     .padding(.vertical, 4)
                 }

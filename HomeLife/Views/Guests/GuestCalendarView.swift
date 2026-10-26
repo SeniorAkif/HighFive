@@ -18,7 +18,7 @@ public struct GuestCalendarView: View {
                 // Filtreleme Çubuğu
                 Picker("Filtrele", selection: $viewModel.selectedFilter) {
                     ForEach(GuestCalendarFilter.allCases) { filter in
-                        Text(filter.rawValue).tag(filter)
+                        Text(filter.localizedTitle).tag(filter)
                     }
                 }
                 .pickerStyle(.segmented)

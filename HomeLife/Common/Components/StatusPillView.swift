@@ -30,7 +30,7 @@ public struct StatusPillView: View {
                 Image(systemName: icon)
                     .font(.caption2)
             }
-            Text(text)
+            Text(LocalizedStringKey(text))
                 .font(.caption)
                 .fontWeight(.medium)
         }

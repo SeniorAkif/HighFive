@@ -3,16 +3,16 @@ import SwiftUI
 /// Boş liste ve durumlar için bilgilendirme görünümü
 public struct EmptyStateView: View {
     public let icon: String
-    public let title: String
-    public let message: String
-    public let actionTitle: String?
+    public let title: LocalizedStringKey
+    public let message: LocalizedStringKey
+    public let actionTitle: LocalizedStringKey?
     public let action: (() -> Void)?
 
     public init(
         icon: String,
-        title: String,
-        message: String,
-        actionTitle: String? = nil,
+        title: LocalizedStringKey,
+        message: LocalizedStringKey,
+        actionTitle: LocalizedStringKey? = nil,
         action: (() -> Void)? = nil
     ) {
         self.icon = icon

@@ -109,7 +109,7 @@ public struct ChoreRowView: View {
                 // Görev Türü Rozeti
                 HStack(spacing: 6) {
                     StatusPillView(
-                        text: chore.assignmentType.rawValue,
+                        text: chore.assignmentType.localizedTitle,
                         icon: chore.assignmentType.iconName,
                         color: chore.assignmentType == .dedicated ? AppTheme.secondary : AppTheme.primary,
                         style: .subtle
@@ -119,7 +119,7 @@ public struct ChoreRowView: View {
                         .font(.caption2)
                         .foregroundColor(.secondary)
 
-                    Text(chore.frequency.rawValue)
+                    Text(chore.frequency.localizedTitle)
                         .font(.caption2)
                         .foregroundColor(.secondary)
 
@@ -131,9 +131,15 @@ public struct ChoreRowView: View {
                 // Orta Kısım: Sorumlu Kişi ve Bitiş Tarihi
                 HStack {
                     VStack(alignment: .leading, spacing: 4) {
-                        Text(chore.assignmentType == .dedicated ? "SABİT SORUMLU" : "ŞU ANKİ SIRA")
-                            .font(.system(size: 10, weight: .bold))
-                            .foregroundColor(.secondary)
+                        if chore.assignmentType == .dedicated {
+                            Text("SABİT SORUMLU")
+                                .font(.system(size: 10, weight: .bold))
+                                .foregroundColor(.secondary)
+                        } else {
+                            Text("ŞU ANKİ SIRA")
+                                .font(.system(size: 10, weight: .bold))
+                                .foregroundColor(.secondary)
+                        }
 
                         if let assignee = currentAssignee {
                             HStack(spacing: 6) {
@@ -228,8 +234,13 @@ public struct ChoreRowView: View {
                 Button(action: onComplete) {
                     HStack(spacing: 8) {
                         Image(systemName: "checkmark.circle.fill")
-                        Text(chore.assignmentType == .dedicated ? "Görevi Tamamladım" : "Sıramı Tamamladım (Devret)")
-                            .fontWeight(.semibold)
+                        if chore.assignmentType == .dedicated {
+                            Text("Görevi Tamamladım")
+                                .fontWeight(.semibold)
+                        } else {
+                            Text("Sıramı Tamamladım (Devret)")
+                                .fontWeight(.semibold)
+                        }
                     }
                     .frame(maxWidth: .infinity)
                     .padding(.vertical, 10)

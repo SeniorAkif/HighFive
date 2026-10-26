@@ -118,12 +118,12 @@ public struct ChoresView: View {
         VStack(spacing: 8) {
             Picker("Filtrele", selection: $viewModel.selectedFilter) {
                 ForEach(ChoreFilter.allCases) { filter in
-                    Text(filter.rawValue).tag(filter)
+                    Text(filter.localizedTitle).tag(filter)
                 }
             }
             .pickerStyle(.segmented)
 
-            // Eğer "Sırası Gelenler" seçildiyse, kişi seçici göster
+            // Eğer "Kişiye Göre" seçildiyse, kişi seçici göster
             if viewModel.selectedFilter == .mine {
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: 8) {

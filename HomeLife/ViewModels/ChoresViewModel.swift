@@ -9,6 +9,17 @@ public enum ChoreFilter: String, CaseIterable, Identifiable {
     case mine = "Kişiye Göre"
 
     public var id: String { rawValue }
+
+    public var localizedTitle: String {
+        let isTurkish = LanguageManager.shared.locale.identifier.starts(with: "tr")
+        switch self {
+        case .all: return isTurkish ? "Tümü" : "All"
+        case .rotating: return isTurkish ? "Sıralı Döngü" : "Rotating"
+        case .dedicated: return isTurkish ? "Sabit Sorumlu" : "Dedicated"
+        case .urgent: return isTurkish ? "Acil & Bugün" : "Urgent"
+        case .mine: return isTurkish ? "Kişiye Göre" : "By Person"
+        }
+    }
 }
 
 @MainActor

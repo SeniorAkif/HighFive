@@ -1,7 +1,12 @@
 import SwiftUI
 
 public struct HouseholdView: View {
+    @EnvironmentObject private var languageManager: LanguageManager
     @StateObject private var viewModel: HouseholdViewModel
+
+    private var isTurkish: Bool {
+        languageManager.currentLanguage == .turkish
+    }
 
     public init(container: DependencyContainer) {
         _viewModel = StateObject(
@@ -19,9 +24,12 @@ public struct HouseholdView: View {
                     // Ev Bilgisi Kartı
                     houseInfoCard
 
+                    // Dil Değiştirici Kartı
+                    languageSettingsCard
+
                     // Ev Arkadaşları Başlığı
                     HStack {
-                        Text("Ev Halkı (\(viewModel.roommates.count) Kişi)")
+                        Text(isTurkish ? "Ev Halkı (\(viewModel.roommates.count) Kişi)" : "Household (\(viewModel.roommates.count) Members)")
                             .font(.headline)
                         Spacer()
                     }
@@ -88,6 +96,39 @@ public struct HouseholdView: View {
                         .foregroundColor(.secondary)
                 }
                 Spacer()
+            }
+        }
+    }
+
+    private var languageSettingsCard: some View {
+        GlassCardView(padding: 16) {
+            VStack(alignment: .leading, spacing: 10) {
+                Label("Uygulama Dili", systemImage: "globe")
+                    .font(.subheadline)
+                    .fontWeight(.bold)
+                    .foregroundColor(AppTheme.primary)
+
+                HStack(spacing: 12) {
+                    ForEach(AppLanguage.allCases) { lang in
+                        let isSelected = languageManager.currentLanguage == lang
+                        Button {
+                            languageManager.setLanguage(lang)
+                        } label: {
+                            HStack(spacing: 6) {
+                                Text(lang.flagEmoji)
+                                Text(lang.title)
+                                    .font(.subheadline)
+                                    .fontWeight(isSelected ? .bold : .regular)
+                            }
+                            .padding(.horizontal, 14)
+                            .padding(.vertical, 8)
+                            .background(isSelected ? AppTheme.primary : Color.primary.opacity(0.06))
+                            .foregroundColor(isSelected ? .white : .primary)
+                            .cornerRadius(12)
+                        }
+                    }
+                    Spacer()
+                }
             }
         }
     }
