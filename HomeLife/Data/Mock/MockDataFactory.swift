@@ -54,6 +54,7 @@ public struct MockDataFactory {
                 title: "Bulaşık Yıkama & Makineyi Boşaltma",
                 description: "Lavabodaki kirli tabakları makineye yerleştir ve temiz olanları dolaplara diz.",
                 category: .kitchen,
+                assignmentType: .rotating,
                 rotationOrder: order,
                 currentAssigneeIndex: 0, // Sıra Ahmet'te
                 frequency: .daily,
@@ -64,8 +65,9 @@ public struct MockDataFactory {
             Chore(
                 id: UUID(uuidString: "AAAA1111-0000-0000-0000-000000000002")!,
                 title: "Çöpleri Dışarı Çıkarma",
-                description: "Mutfak ve balkon çöp torbalarını bağlayıp akşam saat 20:00'den önce konteynere at.",
+                description: "Mutfak ve balkon çöp torbalarını bağlayıp akşam konteynere at.",
                 category: .trash,
+                assignmentType: .rotating,
                 rotationOrder: order,
                 currentAssigneeIndex: 1, // Sıra Mehmet'te
                 frequency: .everyOtherDay,
@@ -75,27 +77,40 @@ public struct MockDataFactory {
             ),
             Chore(
                 id: UUID(uuidString: "AAAA1111-0000-0000-0000-000000000003")!,
+                title: "Mutfak Temizliği & Ocak/Tezgah",
+                description: "Mutfak tezgahını sil, ocağın yağını temizle ve yemek masasını düzenle.",
+                category: .kitchen,
+                assignmentType: .dedicated,
+                dedicatedAssigneeId: roommateMehmetId, // Mehmet'in sabit sorumluluğu
+                frequency: .weekly,
+                dueDate: inTwoDays,
+                lastCompletedDate: calendar.date(byAdding: .day, value: -4, to: today),
+                lastCompletedById: roommateMehmetId
+            ),
+            Chore(
+                id: UUID(uuidString: "AAAA1111-0000-0000-0000-000000000004")!,
+                title: "Salon & Odaları Süpürme",
+                description: "Salonu ve ortak alanları elektrikli süpürgeyle süpür, toz al.",
+                category: .livingRoom,
+                assignmentType: .dedicated,
+                dedicatedAssigneeId: roommateAhmetId, // Ahmet'in sabit sorumluluğu
+                frequency: .weekly,
+                dueDate: inFourDays,
+                lastCompletedDate: calendar.date(byAdding: .day, value: -6, to: today),
+                lastCompletedById: roommateAhmetId
+            ),
+            Chore(
+                id: UUID(uuidString: "AAAA1111-0000-0000-0000-000000000005")!,
                 title: "Banyo & Tuvalet Temizliği",
                 description: "Lavabo, klozet ve duşakabini dezenfektanla temizle, paspası yıka.",
                 category: .bathroom,
+                assignmentType: .rotating,
                 rotationOrder: order,
                 currentAssigneeIndex: 2, // Sıra Barış'ta
                 frequency: .weekly,
                 dueDate: inTwoDays,
                 lastCompletedDate: calendar.date(byAdding: .day, value: -5, to: today),
                 lastCompletedById: roommateMehmetId
-            ),
-            Chore(
-                id: UUID(uuidString: "AAAA1111-0000-0000-0000-000000000004")!,
-                title: "Salon Süpürme & Toz Alma",
-                description: "Salonu elektrikli süpürgeyle süpür, TV ünitesi ve sehpanın tozunu al.",
-                category: .livingRoom,
-                rotationOrder: order,
-                currentAssigneeIndex: 0, // Sıra Ahmet'te
-                frequency: .weekly,
-                dueDate: inFourDays,
-                lastCompletedDate: calendar.date(byAdding: .day, value: -7, to: today),
-                lastCompletedById: roommateBarisId
             )
         ]
     }

@@ -49,6 +49,11 @@ public struct ChoresView: View {
                                             await viewModel.skipTurn(chore, reason: "Manuel sıra atlama")
                                         }
                                     },
+                                    onReassign: { newAssignee in
+                                        Task {
+                                            await viewModel.reassignChore(chore, to: newAssignee.id)
+                                        }
+                                    },
                                     onViewHistory: {
                                         viewModel.selectedChoreForHistory = chore
                                     },
@@ -65,7 +70,7 @@ public struct ChoresView: View {
                 }
             }
             .background(AppTheme.background)
-            .navigationTitle("Ev İşleri Sıralaması")
+            .navigationTitle("Ev İşleri & Görev Paylaşımı")
             .toolbar {
                 ToolbarItem(placement: .primaryAction) {
                     Button {
@@ -78,12 +83,14 @@ public struct ChoresView: View {
                 }
             }
             .sheet(isPresented: $viewModel.isShowingAddSheet) {
-                AddChoreSheet(roommates: viewModel.roommates) { title, desc, cat, order, freq, date in
+                AddChoreSheet(roommates: viewModel.roommates) { title, desc, cat, assignType, dedicatedId, order, freq, date in
                     Task {
                         await viewModel.addChore(
                             title: title,
                             description: desc,
                             category: cat,
+                            assignmentType: assignType,
+                            dedicatedAssigneeId: dedicatedId,
                             rotationOrder: order,
                             frequency: freq,
                             firstDueDate: date

@@ -66,12 +66,30 @@ public enum ChoreFrequency: String, Codable, CaseIterable, Identifiable {
     }
 }
 
-/// Sıralı ev işi modeli
+/// Görevin atanma ve paylaşılma türü
+public enum ChoreAssignmentType: String, Codable, CaseIterable, Identifiable {
+    case rotating = "Sıralı Döngü"       // Ev arkadaşları sırayla tur usulü yapar
+    case dedicated = "Sabit Sorumlu"     // Belirli bir arkadaşın daimi görevidir (örn: Mutfak temizliği)
+
+    public var id: String { rawValue }
+
+    public var iconName: String {
+        switch self {
+        case .rotating: return "arrow.triangle.2.circlepath"
+        case .dedicated: return "pin.fill"
+        }
+    }
+}
+
+/// Sıralı veya sabit paylaşımlı ev işi modeli
 public struct Chore: Identifiable, Codable, Equatable {
     public let id: UUID
     public var title: String
     public var description: String
     public var category: ChoreCategory
+    public var assignmentType: ChoreAssignmentType
+    /// Sabit sorumlu atandıysa sorumlu kişinin UUID'si
+    public var dedicatedAssigneeId: UUID?
     /// Görevi sırayla yapacak kişilerin ID listesi (sıralı döngü)
     public var rotationOrder: [UUID]
     /// Şu anki sıradaki kişinin index'i (rotationOrder[currentAssigneeIndex])
@@ -87,6 +105,8 @@ public struct Chore: Identifiable, Codable, Equatable {
         title: String,
         description: String = "",
         category: ChoreCategory = .general,
+        assignmentType: ChoreAssignmentType = .rotating,
+        dedicatedAssigneeId: UUID? = nil,
         rotationOrder: [UUID] = [],
         currentAssigneeIndex: Int = 0,
         frequency: ChoreFrequency = .weekly,
@@ -99,6 +119,8 @@ public struct Chore: Identifiable, Codable, Equatable {
         self.title = title
         self.description = description
         self.category = category
+        self.assignmentType = assignmentType
+        self.dedicatedAssigneeId = dedicatedAssigneeId
         self.rotationOrder = rotationOrder
         self.currentAssigneeIndex = currentAssigneeIndex
         self.frequency = frequency
@@ -108,11 +130,16 @@ public struct Chore: Identifiable, Codable, Equatable {
         self.createdAt = createdAt
     }
 
-    /// Sıradaki kişinin UUID'si
+    /// Sıradaki veya sorumlu kişinin UUID'si
     public var currentAssigneeId: UUID? {
-        guard !rotationOrder.isEmpty else { return nil }
-        let validIndex = currentAssigneeIndex % rotationOrder.count
-        return rotationOrder[validIndex]
+        switch assignmentType {
+        case .rotating:
+            guard !rotationOrder.isEmpty else { return nil }
+            let validIndex = currentAssigneeIndex % rotationOrder.count
+            return rotationOrder[validIndex]
+        case .dedicated:
+            return dedicatedAssigneeId ?? rotationOrder.first
+        }
     }
 
     /// Son teslim tarihi geçmiş mi?

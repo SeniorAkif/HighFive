@@ -239,9 +239,14 @@ public struct DashboardView: View {
                                 .font(.subheadline)
                                 .fontWeight(.medium)
 
-                            Text(chore.frequency.rawValue)
-                                .font(.caption2)
-                                .foregroundColor(.secondary)
+                            HStack(spacing: 4) {
+                                Image(systemName: chore.assignmentType.iconName)
+                                    .font(.system(size: 9))
+                                    .foregroundColor(chore.assignmentType == .dedicated ? AppTheme.secondary : AppTheme.primary)
+                                Text("\(chore.assignmentType.rawValue) • \(chore.frequency.rawValue)")
+                                    .font(.caption2)
+                                    .foregroundColor(.secondary)
+                            }
                         }
 
                         Spacer()

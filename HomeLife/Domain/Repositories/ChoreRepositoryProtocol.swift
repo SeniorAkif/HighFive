@@ -14,6 +14,9 @@ public protocol ChoreRepositoryProtocol: AnyObject {
     /// Görev sırasını bir sonraki kişiye atlar (örn. sınavı/seyahati olan ev arkadaşı için)
     func skipTurn(choreId: UUID, reason: String?) async throws -> Chore
     
+    /// Görevin sorumlusunu başka bir ev arkadaşına atar/devreder
+    func reassign(choreId: UUID, to roommateId: UUID) async throws -> Chore
+
     /// Görev geçmişi kayıtlarını getirir
     func fetchLogs(for choreId: UUID?) async throws -> [ChoreLog]
 }

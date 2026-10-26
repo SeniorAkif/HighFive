@@ -5,6 +5,7 @@ public struct ChoreRowView: View {
     public let roommates: [Roommate]
     public let onComplete: () -> Void
     public let onSkip: () -> Void
+    public let onReassign: (Roommate) -> Void
     public let onViewHistory: () -> Void
     public let onDelete: () -> Void
 
@@ -13,6 +14,7 @@ public struct ChoreRowView: View {
         roommates: [Roommate],
         onComplete: @escaping () -> Void,
         onSkip: @escaping () -> Void,
+        onReassign: @escaping (Roommate) -> Void,
         onViewHistory: @escaping () -> Void,
         onDelete: @escaping () -> Void
     ) {
@@ -20,6 +22,7 @@ public struct ChoreRowView: View {
         self.roommates = roommates
         self.onComplete = onComplete
         self.onSkip = onSkip
+        self.onReassign = onReassign
         self.onViewHistory = onViewHistory
         self.onDelete = onDelete
     }
@@ -38,7 +41,7 @@ public struct ChoreRowView: View {
     public var body: some View {
         GlassCardView(padding: 16) {
             VStack(alignment: .leading, spacing: 14) {
-                // Üst Kısım: Kategori, Başlık ve Menü
+                // Üst Kısım: Kategori, Başlık, Paylaşım Türü Rozeti ve Menü
                 HStack(alignment: .top, spacing: 12) {
                     Image(systemName: chore.category.iconName)
                         .font(.title3)
@@ -48,9 +51,11 @@ public struct ChoreRowView: View {
                         .cornerRadius(12)
 
                     VStack(alignment: .leading, spacing: 4) {
-                        Text(chore.title)
-                            .font(.headline)
-                            .foregroundColor(.primary)
+                        HStack(spacing: 6) {
+                            Text(chore.title)
+                                .font(.headline)
+                                .foregroundColor(.primary)
+                        }
 
                         if !chore.description.isEmpty {
                             Text(chore.description)
@@ -63,9 +68,29 @@ public struct ChoreRowView: View {
                     Spacer()
 
                     Menu {
-                        Button(action: onSkip) {
-                            Label("Sırayı Sonrakine Devret (Atla)", systemImage: "arrow.right.circle")
+                        if chore.assignmentType == .rotating {
+                            Button(action: onSkip) {
+                                Label("Sırayı Sonrakine Devret (Atla)", systemImage: "arrow.right.circle")
+                            }
                         }
+
+                        Menu {
+                            ForEach(roommates) { roommate in
+                                Button {
+                                    onReassign(roommate)
+                                } label: {
+                                    HStack {
+                                        Text(roommate.displayName)
+                                        if roommate.id == chore.currentAssigneeId {
+                                            Image(systemName: "checkmark")
+                                        }
+                                    }
+                                }
+                            }
+                        } label: {
+                            Label("Sorumluyu Değiştir", systemImage: "person.2.circle")
+                        }
+
                         Button(action: onViewHistory) {
                             Label("Görev Geçmişi", systemImage: "clock.arrow.circlepath")
                         }
@@ -81,12 +106,32 @@ public struct ChoreRowView: View {
                     }
                 }
 
+                // Görev Türü Rozeti
+                HStack(spacing: 6) {
+                    StatusPillView(
+                        text: chore.assignmentType.rawValue,
+                        icon: chore.assignmentType.iconName,
+                        color: chore.assignmentType == .dedicated ? AppTheme.secondary : AppTheme.primary,
+                        style: .subtle
+                    )
+
+                    Text("•")
+                        .font(.caption2)
+                        .foregroundColor(.secondary)
+
+                    Text(chore.frequency.rawValue)
+                        .font(.caption2)
+                        .foregroundColor(.secondary)
+
+                    Spacer()
+                }
+
                 Divider()
 
-                // Orta Kısım: Sıradaki Kişi ve Durum
+                // Orta Kısım: Sorumlu Kişi ve Bitiş Tarihi
                 HStack {
                     VStack(alignment: .leading, spacing: 4) {
-                        Text("ŞU ANKİ SIRA")
+                        Text(chore.assignmentType == .dedicated ? "SABİT SORUMLU" : "ŞU ANKİ SIRA")
                             .font(.system(size: 10, weight: .bold))
                             .foregroundColor(.secondary)
 
@@ -126,52 +171,64 @@ public struct ChoreRowView: View {
                     }
                 }
 
-                // Alt Kısım: Sıralama Döngüsü Görünümü
-                VStack(alignment: .leading, spacing: 6) {
-                    Text("Döngü Sırası:")
-                        .font(.system(size: 11, weight: .medium))
-                        .foregroundColor(.secondary)
+                // Alt Kısım: Sıralı Döngü veya Sabit Görev Açıklaması
+                if chore.assignmentType == .rotating {
+                    VStack(alignment: .leading, spacing: 6) {
+                        Text("Döngü Sırası:")
+                            .font(.system(size: 11, weight: .medium))
+                            .foregroundColor(.secondary)
 
-                    ScrollView(.horizontal, showsIndicators: false) {
-                        HStack(spacing: 6) {
-                            ForEach(Array(orderedRoommates.enumerated()), id: \.offset) { index, roommate in
-                                let isCurrent = (index == chore.currentAssigneeIndex % max(1, chore.rotationOrder.count))
-                                HStack(spacing: 4) {
-                                    Text("\(index + 1).")
-                                        .font(.system(size: 10, weight: .bold))
-                                        .foregroundColor(isCurrent ? Color(hex: roommate.avatarColorHex) : .secondary)
+                        ScrollView(.horizontal, showsIndicators: false) {
+                            HStack(spacing: 6) {
+                                ForEach(Array(orderedRoommates.enumerated()), id: \.offset) { index, roommate in
+                                    let isCurrent = (index == chore.currentAssigneeIndex % max(1, chore.rotationOrder.count))
+                                    HStack(spacing: 4) {
+                                        Text("\(index + 1).")
+                                            .font(.system(size: 10, weight: .bold))
+                                            .foregroundColor(isCurrent ? Color(hex: roommate.avatarColorHex) : .secondary)
 
-                                    Text(roommate.displayName)
-                                        .font(.caption2)
-                                        .fontWeight(isCurrent ? .bold : .regular)
-                                        .foregroundColor(isCurrent ? Color(hex: roommate.avatarColorHex) : .secondary)
-                                }
-                                .padding(.horizontal, 8)
-                                .padding(.vertical, 4)
-                                .background(
-                                    RoundedRectangle(cornerRadius: 8)
-                                        .fill(isCurrent ? Color(hex: roommate.avatarColorHex).opacity(0.18) : Color.primary.opacity(0.04))
-                                )
-                                .overlay(
-                                    RoundedRectangle(cornerRadius: 8)
-                                        .stroke(isCurrent ? Color(hex: roommate.avatarColorHex) : Color.clear, lineWidth: 1.5)
-                                )
+                                        Text(roommate.displayName)
+                                            .font(.caption2)
+                                            .fontWeight(isCurrent ? .bold : .regular)
+                                            .foregroundColor(isCurrent ? Color(hex: roommate.avatarColorHex) : .secondary)
+                                    }
+                                    .padding(.horizontal, 8)
+                                    .padding(.vertical, 4)
+                                    .background(
+                                        RoundedRectangle(cornerRadius: 8)
+                                            .fill(isCurrent ? Color(hex: roommate.avatarColorHex).opacity(0.18) : Color.primary.opacity(0.04))
+                                    )
+                                    .overlay(
+                                        RoundedRectangle(cornerRadius: 8)
+                                            .stroke(isCurrent ? Color(hex: roommate.avatarColorHex) : Color.clear, lineWidth: 1.5)
+                                    )
 
-                                if index < orderedRoommates.count - 1 {
-                                    Image(systemName: "chevron.right")
-                                        .font(.system(size: 8))
-                                        .foregroundColor(.secondary)
+                                    if index < orderedRoommates.count - 1 {
+                                        Image(systemName: "chevron.right")
+                                            .font(.system(size: 8))
+                                            .foregroundColor(.secondary)
+                                    }
                                 }
                             }
                         }
                     }
+                } else {
+                    HStack(spacing: 6) {
+                        Image(systemName: "pin.circle.fill")
+                            .font(.caption)
+                            .foregroundColor(AppTheme.secondary)
+                        Text("Bu görev kalıcı olarak paylaşıldı. Tamamlandığında sorumlusu değişmez.")
+                            .font(.caption2)
+                            .foregroundColor(.secondary)
+                    }
+                    .padding(.vertical, 2)
                 }
 
                 // Tamamla Butonu
                 Button(action: onComplete) {
                     HStack(spacing: 8) {
                         Image(systemName: "checkmark.circle.fill")
-                        Text("Sıramı Tamamladım (Devret)")
+                        Text(chore.assignmentType == .dedicated ? "Görevi Tamamladım" : "Sıramı Tamamladım (Devret)")
                             .fontWeight(.semibold)
                     }
                     .frame(maxWidth: .infinity)

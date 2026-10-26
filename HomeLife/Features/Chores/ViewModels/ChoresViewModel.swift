@@ -3,8 +3,10 @@ import SwiftUI
 
 public enum ChoreFilter: String, CaseIterable, Identifiable {
     case all = "Tümü"
+    case rotating = "Sıralı Döngü"
+    case dedicated = "Sabit Sorumlu"
     case urgent = "Acil & Bugün"
-    case mine = "Sırası Gelenler"
+    case mine = "Kişiye Göre"
 
     public var id: String { rawValue }
 }
@@ -20,6 +22,7 @@ public final class ChoresViewModel: ObservableObject {
     @Published public var errorMessage: String?
     @Published public var isShowingAddSheet: Bool = false
     @Published public var selectedChoreForHistory: Chore? = nil
+    @Published public var selectedChoreForReassign: Chore? = nil
 
     private let choreRepository: any ChoreRepositoryProtocol
     private let roommateRepository: any RoommateRepositoryProtocol
@@ -57,6 +60,10 @@ public final class ChoresViewModel: ObservableObject {
         switch selectedFilter {
         case .all:
             break
+        case .rotating:
+            result = result.filter { $0.assignmentType == .rotating }
+        case .dedicated:
+            result = result.filter { $0.assignmentType == .dedicated }
         case .urgent:
             result = result.filter { $0.isOverdue || $0.isDueToday }
         case .mine:
@@ -107,6 +114,8 @@ public final class ChoresViewModel: ObservableObject {
         title: String,
         description: String,
         category: ChoreCategory,
+        assignmentType: ChoreAssignmentType,
+        dedicatedAssigneeId: UUID?,
         rotationOrder: [UUID],
         frequency: ChoreFrequency,
         firstDueDate: Date
@@ -115,6 +124,8 @@ public final class ChoresViewModel: ObservableObject {
             title: title,
             description: description,
             category: category,
+            assignmentType: assignmentType,
+            dedicatedAssigneeId: dedicatedAssigneeId,
             rotationOrder: rotationOrder,
             currentAssigneeIndex: 0,
             frequency: frequency,
@@ -123,6 +134,19 @@ public final class ChoresViewModel: ObservableObject {
         do {
             try await choreRepository.add(newChore)
             await loadData()
+        } catch {
+            self.errorMessage = error.localizedDescription
+        }
+    }
+
+    /// Görevin sorumlusunu değiştirir / devreder
+    public func reassignChore(_ chore: Chore, to newAssigneeId: UUID) async {
+        do {
+            let updated = try await choreRepository.reassign(choreId: chore.id, to: newAssigneeId)
+            if let index = chores.firstIndex(where: { $0.id == updated.id }) {
+                chores[index] = updated
+            }
+            self.logs = try await choreRepository.fetchLogs(for: nil)
         } catch {
             self.errorMessage = error.localizedDescription
         }

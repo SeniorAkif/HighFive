@@ -54,8 +54,8 @@ public final class InMemoryChoreRepository: ChoreRepositoryProtocol {
         )
         logs.insert(log, at: 0)
 
-        // 2. Sırayı bir sonraki kişiye devret (Round-Robin Rotasyonu)
-        if !chore.rotationOrder.isEmpty {
+        // 2. Eğer sıralı döngü ise sırayı bir sonraki kişiye devret (Sabit sorumlu ise kişi değişmez)
+        if chore.assignmentType == .rotating && !chore.rotationOrder.isEmpty {
             chore.currentAssigneeIndex = (chore.currentAssigneeIndex + 1) % chore.rotationOrder.count
         }
 
@@ -89,6 +89,37 @@ public final class InMemoryChoreRepository: ChoreRepositoryProtocol {
             completedByRoommateId: skippedPersonId,
             completedAt: Date(),
             notes: noteText
+        )
+        logs.insert(log, at: 0)
+
+        chores[index] = chore
+        return chore
+    }
+
+    public func reassign(choreId: UUID, to roommateId: UUID) async throws -> Chore {
+        guard let index = chores.firstIndex(where: { $0.id == choreId }) else {
+            throw NSError(domain: "HighFive.ChoreRepository", code: 404, userInfo: [NSLocalizedDescriptionKey: "Görev bulunamadı"])
+        }
+
+        var chore = chores[index]
+        if chore.assignmentType == .dedicated {
+            chore.dedicatedAssigneeId = roommateId
+        } else {
+            // Sıralı döngüde de mevcut sırayı seçilen kişiye ayarla
+            if let orderIdx = chore.rotationOrder.firstIndex(of: roommateId) {
+                chore.currentAssigneeIndex = orderIdx
+            } else {
+                chore.rotationOrder.append(roommateId)
+                chore.currentAssigneeIndex = chore.rotationOrder.count - 1
+            }
+        }
+
+        let log = ChoreLog(
+            choreId: chore.id,
+            choreTitle: chore.title,
+            completedByRoommateId: roommateId,
+            completedAt: Date(),
+            notes: "Görev sorumlusu güncellendi."
         )
         logs.insert(log, at: 0)
 
