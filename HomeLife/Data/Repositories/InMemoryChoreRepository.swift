@@ -38,7 +38,7 @@ public final class InMemoryChoreRepository: ChoreRepositoryProtocol {
 
     public func completeTurn(choreId: UUID, completedById: UUID, notes: String?) async throws -> Chore {
         guard let index = chores.firstIndex(where: { $0.id == choreId }) else {
-            throw NSError(domain: "HomeLife.ChoreRepository", code: 404, userInfo: [NSLocalizedDescriptionKey: "Görev bulunamadı"])
+            throw NSError(domain: "HighFive.ChoreRepository", code: 404, userInfo: [NSLocalizedDescriptionKey: "Görev bulunamadı"])
         }
 
         var chore = chores[index]
@@ -70,7 +70,7 @@ public final class InMemoryChoreRepository: ChoreRepositoryProtocol {
 
     public func skipTurn(choreId: UUID, reason: String?) async throws -> Chore {
         guard let index = chores.firstIndex(where: { $0.id == choreId }) else {
-            throw NSError(domain: "HomeLife.ChoreRepository", code: 404, userInfo: [NSLocalizedDescriptionKey: "Görev bulunamadı"])
+            throw NSError(domain: "HighFive.ChoreRepository", code: 404, userInfo: [NSLocalizedDescriptionKey: "Görev bulunamadı"])
         }
 
         var chore = chores[index]

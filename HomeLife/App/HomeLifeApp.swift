@@ -1,7 +1,7 @@
 import SwiftUI
 
 @main
-struct HomeLifeApp: App {
+struct HighFiveApp: App {
     @StateObject private var container = DependencyContainer()
 
     var body: some Scene {

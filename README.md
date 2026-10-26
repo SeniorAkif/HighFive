@@ -1,4 +1,4 @@
-# 🏠 HomeLife - Öğrenci Evi Yönetim Asistanı
+# 🖐️ HighFive - Öğrenci Evi Yönetim Asistanı
 
 Öğrenci evlerinde ev arkadaşları arasında adil görev dağılımı (bulaşık, çöp, temizlik vb.), eve gelen misafirlerin takibi ve ortak yaşam kurallarını kolaylaştırmak için **SwiftUI**, **Clean Architecture** ve **MVVM** prensipleriyle geliştirilmiş modern bir iOS uygulaması.
 
@@ -11,7 +11,7 @@
 2. **Haber verilmeyen veya çakışan misafirler:** Aynı anda birden fazla kişinin misafir getirmesi veya sınav haftalarında habersiz yatılı misafir gelmesi.
 3. **Takip edilemeyen ev masrafları ve ortak ihtiyaçlar:** Biten deterjan, peçete veya ortak market alışverişi borçlarının karışması.
 
-**HomeLife**, bu problemleri şeffaf, adil ve modüler bir mimariyle çözer.
+**HighFive**, bu problemleri şeffaf, adil ve modüler bir mimariyle çözer. "İşini bitir, çak bir beşlik!" mantığıyla ev arkadaşları arasındaki huzuru korur.
 
 ---
 

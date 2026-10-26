@@ -38,14 +38,14 @@ public struct DashboardView: View {
                 .padding(.vertical, 12)
             }
             .background(AppTheme.background)
-            .navigationTitle("HomeLife")
+            .navigationTitle("HighFive")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .principal) {
                     HStack(spacing: 6) {
-                        Image(systemName: "house.fill")
+                        Image(systemName: "hand.raised.fill")
                             .foregroundColor(AppTheme.primary)
-                        Text("HomeLife")
+                        Text("HighFive")
                             .font(.headline)
                             .fontWeight(.bold)
                     }

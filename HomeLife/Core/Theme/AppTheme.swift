@@ -1,6 +1,6 @@
 import SwiftUI
 
-/// HomeLife tema ve renk paleti
+/// HighFive tema ve renk paleti
 public struct AppTheme {
     // Ana renkler
     public static let primary = Color(hex: "#4F46E5")     // Indigo
