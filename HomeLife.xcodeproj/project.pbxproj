@@ -7,80 +7,80 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		000000020000000000000002 /* HomeLife/Resources/Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 000000020000000000000001 /* HomeLife/Resources/Assets.xcassets */; };
-		0000000A0000000000000002 /* HomeLife/App/DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0000000A0000000000000001 /* HomeLife/App/DependencyContainer.swift */; };
-		0000000A0000000000000004 /* HomeLife/App/HomeLifeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0000000A0000000000000003 /* HomeLife/App/HomeLifeApp.swift */; };
-		0000000A0000000000000006 /* HomeLife/Core/Components/AvatarBadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0000000A0000000000000005 /* HomeLife/Core/Components/AvatarBadgeView.swift */; };
-		0000000A0000000000000008 /* HomeLife/Core/Components/EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0000000A0000000000000007 /* HomeLife/Core/Components/EmptyStateView.swift */; };
-		0000000A000000000000000A /* HomeLife/Core/Components/GlassCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0000000A0000000000000009 /* HomeLife/Core/Components/GlassCardView.swift */; };
-		0000000A000000000000000C /* HomeLife/Core/Components/StatusPillView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0000000A000000000000000B /* HomeLife/Core/Components/StatusPillView.swift */; };
-		0000000A000000000000000E /* HomeLife/Core/Extensions/Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0000000A000000000000000D /* HomeLife/Core/Extensions/Date+Extensions.swift */; };
-		0000000A0000000000000010 /* HomeLife/Core/Theme/AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0000000A000000000000000F /* HomeLife/Core/Theme/AppTheme.swift */; };
-		0000000A0000000000000012 /* HomeLife/Data/Mock/MockDataFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0000000A0000000000000011 /* HomeLife/Data/Mock/MockDataFactory.swift */; };
-		0000000A0000000000000014 /* HomeLife/Data/Repositories/InMemoryChoreRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0000000A0000000000000013 /* HomeLife/Data/Repositories/InMemoryChoreRepository.swift */; };
-		0000000A0000000000000016 /* HomeLife/Data/Repositories/InMemoryGuestRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0000000A0000000000000015 /* HomeLife/Data/Repositories/InMemoryGuestRepository.swift */; };
-		0000000A0000000000000018 /* HomeLife/Data/Repositories/InMemoryRoommateRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0000000A0000000000000017 /* HomeLife/Data/Repositories/InMemoryRoommateRepository.swift */; };
-		0000000A000000000000001A /* HomeLife/Domain/Models/Chore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0000000A0000000000000019 /* HomeLife/Domain/Models/Chore.swift */; };
-		0000000A000000000000001C /* HomeLife/Domain/Models/ChoreLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0000000A000000000000001B /* HomeLife/Domain/Models/ChoreLog.swift */; };
-		0000000A000000000000001E /* HomeLife/Domain/Models/GuestVisit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0000000A000000000000001D /* HomeLife/Domain/Models/GuestVisit.swift */; };
-		0000000A0000000000000020 /* HomeLife/Domain/Models/Roommate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0000000A000000000000001F /* HomeLife/Domain/Models/Roommate.swift */; };
-		0000000A0000000000000022 /* HomeLife/Domain/Repositories/ChoreRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0000000A0000000000000021 /* HomeLife/Domain/Repositories/ChoreRepositoryProtocol.swift */; };
-		0000000A0000000000000024 /* HomeLife/Domain/Repositories/GuestRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0000000A0000000000000023 /* HomeLife/Domain/Repositories/GuestRepositoryProtocol.swift */; };
-		0000000A0000000000000026 /* HomeLife/Domain/Repositories/RoommateRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0000000A0000000000000025 /* HomeLife/Domain/Repositories/RoommateRepositoryProtocol.swift */; };
-		0000000A0000000000000028 /* HomeLife/Features/Chores/ViewModels/ChoresViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0000000A0000000000000027 /* HomeLife/Features/Chores/ViewModels/ChoresViewModel.swift */; };
-		0000000A000000000000002A /* HomeLife/Features/Chores/Views/AddChoreSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0000000A0000000000000029 /* HomeLife/Features/Chores/Views/AddChoreSheet.swift */; };
-		0000000A000000000000002C /* HomeLife/Features/Chores/Views/ChoreHistorySheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0000000A000000000000002B /* HomeLife/Features/Chores/Views/ChoreHistorySheet.swift */; };
-		0000000A000000000000002E /* HomeLife/Features/Chores/Views/ChoreRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0000000A000000000000002D /* HomeLife/Features/Chores/Views/ChoreRowView.swift */; };
-		0000000A0000000000000030 /* HomeLife/Features/Chores/Views/ChoresView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0000000A000000000000002F /* HomeLife/Features/Chores/Views/ChoresView.swift */; };
-		0000000A0000000000000032 /* HomeLife/Features/Dashboard/ViewModels/DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0000000A0000000000000031 /* HomeLife/Features/Dashboard/ViewModels/DashboardViewModel.swift */; };
-		0000000A0000000000000034 /* HomeLife/Features/Dashboard/Views/DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0000000A0000000000000033 /* HomeLife/Features/Dashboard/Views/DashboardView.swift */; };
-		0000000A0000000000000036 /* HomeLife/Features/Guests/ViewModels/GuestCalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0000000A0000000000000035 /* HomeLife/Features/Guests/ViewModels/GuestCalendarViewModel.swift */; };
-		0000000A0000000000000038 /* HomeLife/Features/Guests/Views/AddGuestSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0000000A0000000000000037 /* HomeLife/Features/Guests/Views/AddGuestSheet.swift */; };
-		0000000A000000000000003A /* HomeLife/Features/Guests/Views/GuestCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0000000A0000000000000039 /* HomeLife/Features/Guests/Views/GuestCalendarView.swift */; };
-		0000000A000000000000003C /* HomeLife/Features/Guests/Views/GuestVisitRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0000000A000000000000003B /* HomeLife/Features/Guests/Views/GuestVisitRowView.swift */; };
-		0000000A000000000000003E /* HomeLife/Features/Household/ViewModels/HouseholdViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0000000A000000000000003D /* HomeLife/Features/Household/ViewModels/HouseholdViewModel.swift */; };
-		0000000A0000000000000040 /* HomeLife/Features/Household/Views/AddRoommateSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0000000A000000000000003F /* HomeLife/Features/Household/Views/AddRoommateSheet.swift */; };
-		0000000A0000000000000042 /* HomeLife/Features/Household/Views/HouseholdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0000000A0000000000000041 /* HomeLife/Features/Household/Views/HouseholdView.swift */; };
-		0000000A0000000000000044 /* HomeLife/Features/Root/MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0000000A0000000000000043 /* HomeLife/Features/Root/MainTabView.swift */; };
+		0000000A0000000000000002 /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0000000A0000000000000001 /* DependencyContainer.swift */; };
+		0000000A0000000000000004 /* HomeLifeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0000000A0000000000000003 /* HomeLifeApp.swift */; };
+		0000000A0000000000000006 /* AvatarBadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0000000A0000000000000005 /* AvatarBadgeView.swift */; };
+		0000000A0000000000000008 /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0000000A0000000000000007 /* EmptyStateView.swift */; };
+		0000000A000000000000000A /* GlassCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0000000A0000000000000009 /* GlassCardView.swift */; };
+		0000000A000000000000000C /* StatusPillView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0000000A000000000000000B /* StatusPillView.swift */; };
+		0000000A000000000000000E /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0000000A000000000000000D /* Date+Extensions.swift */; };
+		0000000A0000000000000010 /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0000000A000000000000000F /* AppTheme.swift */; };
+		0000000A0000000000000012 /* Chore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0000000A0000000000000011 /* Chore.swift */; };
+		0000000A0000000000000014 /* ChoreLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0000000A0000000000000013 /* ChoreLog.swift */; };
+		0000000A0000000000000016 /* GuestVisit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0000000A0000000000000015 /* GuestVisit.swift */; };
+		0000000A0000000000000018 /* Roommate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0000000A0000000000000017 /* Roommate.swift */; };
+		0000000A000000000000001A /* InMemoryChoreRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0000000A0000000000000019 /* InMemoryChoreRepository.swift */; };
+		0000000A000000000000001C /* InMemoryGuestRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0000000A000000000000001B /* InMemoryGuestRepository.swift */; };
+		0000000A000000000000001E /* InMemoryRoommateRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0000000A000000000000001D /* InMemoryRoommateRepository.swift */; };
+		0000000A0000000000000020 /* MockDataFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0000000A000000000000001F /* MockDataFactory.swift */; };
+		0000000A0000000000000022 /* ChoreRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0000000A0000000000000021 /* ChoreRepositoryProtocol.swift */; };
+		0000000A0000000000000024 /* GuestRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0000000A0000000000000023 /* GuestRepositoryProtocol.swift */; };
+		0000000A0000000000000026 /* RoommateRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0000000A0000000000000025 /* RoommateRepositoryProtocol.swift */; };
+		0000000A0000000000000028 /* ChoresViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0000000A0000000000000027 /* ChoresViewModel.swift */; };
+		0000000A000000000000002A /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0000000A0000000000000029 /* DashboardViewModel.swift */; };
+		0000000A000000000000002C /* GuestCalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0000000A000000000000002B /* GuestCalendarViewModel.swift */; };
+		0000000A000000000000002E /* HouseholdViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0000000A000000000000002D /* HouseholdViewModel.swift */; };
+		0000000A0000000000000030 /* AddChoreSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0000000A000000000000002F /* AddChoreSheet.swift */; };
+		0000000A0000000000000032 /* ChoreHistorySheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0000000A0000000000000031 /* ChoreHistorySheet.swift */; };
+		0000000A0000000000000034 /* ChoreRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0000000A0000000000000033 /* ChoreRowView.swift */; };
+		0000000A0000000000000036 /* ChoresView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0000000A0000000000000035 /* ChoresView.swift */; };
+		0000000A0000000000000038 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0000000A0000000000000037 /* DashboardView.swift */; };
+		0000000A000000000000003A /* AddGuestSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0000000A0000000000000039 /* AddGuestSheet.swift */; };
+		0000000A000000000000003C /* GuestCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0000000A000000000000003B /* GuestCalendarView.swift */; };
+		0000000A000000000000003E /* GuestVisitRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0000000A000000000000003D /* GuestVisitRowView.swift */; };
+		0000000A0000000000000040 /* AddRoommateSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0000000A000000000000003F /* AddRoommateSheet.swift */; };
+		0000000A0000000000000042 /* HouseholdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0000000A0000000000000041 /* HouseholdView.swift */; };
+		0000000A0000000000000044 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0000000A0000000000000043 /* MainTabView.swift */; };
+		000000020000000000000002 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 000000020000000000000001 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0000000A0000000000000001 /* DependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeLife/App/DependencyContainer.swift"; sourceTree = "<group>"; };
+		0000000A0000000000000003 /* HomeLifeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeLife/App/HomeLifeApp.swift"; sourceTree = "<group>"; };
+		0000000A0000000000000005 /* AvatarBadgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeLife/Common/Components/AvatarBadgeView.swift"; sourceTree = "<group>"; };
+		0000000A0000000000000007 /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeLife/Common/Components/EmptyStateView.swift"; sourceTree = "<group>"; };
+		0000000A0000000000000009 /* GlassCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeLife/Common/Components/GlassCardView.swift"; sourceTree = "<group>"; };
+		0000000A000000000000000B /* StatusPillView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeLife/Common/Components/StatusPillView.swift"; sourceTree = "<group>"; };
+		0000000A000000000000000D /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeLife/Common/Extensions/Date+Extensions.swift"; sourceTree = "<group>"; };
+		0000000A000000000000000F /* AppTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeLife/Common/Theme/AppTheme.swift"; sourceTree = "<group>"; };
+		0000000A0000000000000011 /* Chore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeLife/Models/Chore.swift"; sourceTree = "<group>"; };
+		0000000A0000000000000013 /* ChoreLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeLife/Models/ChoreLog.swift"; sourceTree = "<group>"; };
+		0000000A0000000000000015 /* GuestVisit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeLife/Models/GuestVisit.swift"; sourceTree = "<group>"; };
+		0000000A0000000000000017 /* Roommate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeLife/Models/Roommate.swift"; sourceTree = "<group>"; };
+		0000000A0000000000000019 /* InMemoryChoreRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeLife/Repositories/InMemory/InMemoryChoreRepository.swift"; sourceTree = "<group>"; };
+		0000000A000000000000001B /* InMemoryGuestRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeLife/Repositories/InMemory/InMemoryGuestRepository.swift"; sourceTree = "<group>"; };
+		0000000A000000000000001D /* InMemoryRoommateRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeLife/Repositories/InMemory/InMemoryRoommateRepository.swift"; sourceTree = "<group>"; };
+		0000000A000000000000001F /* MockDataFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeLife/Repositories/InMemory/MockDataFactory.swift"; sourceTree = "<group>"; };
+		0000000A0000000000000021 /* ChoreRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeLife/Repositories/Protocols/ChoreRepositoryProtocol.swift"; sourceTree = "<group>"; };
+		0000000A0000000000000023 /* GuestRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeLife/Repositories/Protocols/GuestRepositoryProtocol.swift"; sourceTree = "<group>"; };
+		0000000A0000000000000025 /* RoommateRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeLife/Repositories/Protocols/RoommateRepositoryProtocol.swift"; sourceTree = "<group>"; };
+		0000000A0000000000000027 /* ChoresViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeLife/ViewModels/ChoresViewModel.swift"; sourceTree = "<group>"; };
+		0000000A0000000000000029 /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeLife/ViewModels/DashboardViewModel.swift"; sourceTree = "<group>"; };
+		0000000A000000000000002B /* GuestCalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeLife/ViewModels/GuestCalendarViewModel.swift"; sourceTree = "<group>"; };
+		0000000A000000000000002D /* HouseholdViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeLife/ViewModels/HouseholdViewModel.swift"; sourceTree = "<group>"; };
+		0000000A000000000000002F /* AddChoreSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeLife/Views/Chores/AddChoreSheet.swift"; sourceTree = "<group>"; };
+		0000000A0000000000000031 /* ChoreHistorySheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeLife/Views/Chores/ChoreHistorySheet.swift"; sourceTree = "<group>"; };
+		0000000A0000000000000033 /* ChoreRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeLife/Views/Chores/ChoreRowView.swift"; sourceTree = "<group>"; };
+		0000000A0000000000000035 /* ChoresView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeLife/Views/Chores/ChoresView.swift"; sourceTree = "<group>"; };
+		0000000A0000000000000037 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeLife/Views/Dashboard/DashboardView.swift"; sourceTree = "<group>"; };
+		0000000A0000000000000039 /* AddGuestSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeLife/Views/Guests/AddGuestSheet.swift"; sourceTree = "<group>"; };
+		0000000A000000000000003B /* GuestCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeLife/Views/Guests/GuestCalendarView.swift"; sourceTree = "<group>"; };
+		0000000A000000000000003D /* GuestVisitRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeLife/Views/Guests/GuestVisitRowView.swift"; sourceTree = "<group>"; };
+		0000000A000000000000003F /* AddRoommateSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeLife/Views/Household/AddRoommateSheet.swift"; sourceTree = "<group>"; };
+		0000000A0000000000000041 /* HouseholdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeLife/Views/Household/HouseholdView.swift"; sourceTree = "<group>"; };
+		0000000A0000000000000043 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeLife/Views/Root/MainTabView.swift"; sourceTree = "<group>"; };
+		000000020000000000000001 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "HomeLife/Resources/Assets.xcassets"; sourceTree = "<group>"; };
 		000000010000000000000003 /* HomeLife.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomeLife.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		000000020000000000000001 /* HomeLife/Resources/Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = HomeLife/Resources/Assets.xcassets; sourceTree = "<group>"; };
-		0000000A0000000000000001 /* HomeLife/App/DependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLife/App/DependencyContainer.swift; sourceTree = "<group>"; };
-		0000000A0000000000000003 /* HomeLife/App/HomeLifeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLife/App/HomeLifeApp.swift; sourceTree = "<group>"; };
-		0000000A0000000000000005 /* HomeLife/Core/Components/AvatarBadgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLife/Core/Components/AvatarBadgeView.swift; sourceTree = "<group>"; };
-		0000000A0000000000000007 /* HomeLife/Core/Components/EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLife/Core/Components/EmptyStateView.swift; sourceTree = "<group>"; };
-		0000000A0000000000000009 /* HomeLife/Core/Components/GlassCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLife/Core/Components/GlassCardView.swift; sourceTree = "<group>"; };
-		0000000A000000000000000B /* HomeLife/Core/Components/StatusPillView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLife/Core/Components/StatusPillView.swift; sourceTree = "<group>"; };
-		0000000A000000000000000D /* HomeLife/Core/Extensions/Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeLife/Core/Extensions/Date+Extensions.swift"; sourceTree = "<group>"; };
-		0000000A000000000000000F /* HomeLife/Core/Theme/AppTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLife/Core/Theme/AppTheme.swift; sourceTree = "<group>"; };
-		0000000A0000000000000011 /* HomeLife/Data/Mock/MockDataFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLife/Data/Mock/MockDataFactory.swift; sourceTree = "<group>"; };
-		0000000A0000000000000013 /* HomeLife/Data/Repositories/InMemoryChoreRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLife/Data/Repositories/InMemoryChoreRepository.swift; sourceTree = "<group>"; };
-		0000000A0000000000000015 /* HomeLife/Data/Repositories/InMemoryGuestRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLife/Data/Repositories/InMemoryGuestRepository.swift; sourceTree = "<group>"; };
-		0000000A0000000000000017 /* HomeLife/Data/Repositories/InMemoryRoommateRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLife/Data/Repositories/InMemoryRoommateRepository.swift; sourceTree = "<group>"; };
-		0000000A0000000000000019 /* HomeLife/Domain/Models/Chore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLife/Domain/Models/Chore.swift; sourceTree = "<group>"; };
-		0000000A000000000000001B /* HomeLife/Domain/Models/ChoreLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLife/Domain/Models/ChoreLog.swift; sourceTree = "<group>"; };
-		0000000A000000000000001D /* HomeLife/Domain/Models/GuestVisit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLife/Domain/Models/GuestVisit.swift; sourceTree = "<group>"; };
-		0000000A000000000000001F /* HomeLife/Domain/Models/Roommate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLife/Domain/Models/Roommate.swift; sourceTree = "<group>"; };
-		0000000A0000000000000021 /* HomeLife/Domain/Repositories/ChoreRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLife/Domain/Repositories/ChoreRepositoryProtocol.swift; sourceTree = "<group>"; };
-		0000000A0000000000000023 /* HomeLife/Domain/Repositories/GuestRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLife/Domain/Repositories/GuestRepositoryProtocol.swift; sourceTree = "<group>"; };
-		0000000A0000000000000025 /* HomeLife/Domain/Repositories/RoommateRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLife/Domain/Repositories/RoommateRepositoryProtocol.swift; sourceTree = "<group>"; };
-		0000000A0000000000000027 /* HomeLife/Features/Chores/ViewModels/ChoresViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLife/Features/Chores/ViewModels/ChoresViewModel.swift; sourceTree = "<group>"; };
-		0000000A0000000000000029 /* HomeLife/Features/Chores/Views/AddChoreSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLife/Features/Chores/Views/AddChoreSheet.swift; sourceTree = "<group>"; };
-		0000000A000000000000002B /* HomeLife/Features/Chores/Views/ChoreHistorySheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLife/Features/Chores/Views/ChoreHistorySheet.swift; sourceTree = "<group>"; };
-		0000000A000000000000002D /* HomeLife/Features/Chores/Views/ChoreRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLife/Features/Chores/Views/ChoreRowView.swift; sourceTree = "<group>"; };
-		0000000A000000000000002F /* HomeLife/Features/Chores/Views/ChoresView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLife/Features/Chores/Views/ChoresView.swift; sourceTree = "<group>"; };
-		0000000A0000000000000031 /* HomeLife/Features/Dashboard/ViewModels/DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLife/Features/Dashboard/ViewModels/DashboardViewModel.swift; sourceTree = "<group>"; };
-		0000000A0000000000000033 /* HomeLife/Features/Dashboard/Views/DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLife/Features/Dashboard/Views/DashboardView.swift; sourceTree = "<group>"; };
-		0000000A0000000000000035 /* HomeLife/Features/Guests/ViewModels/GuestCalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLife/Features/Guests/ViewModels/GuestCalendarViewModel.swift; sourceTree = "<group>"; };
-		0000000A0000000000000037 /* HomeLife/Features/Guests/Views/AddGuestSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLife/Features/Guests/Views/AddGuestSheet.swift; sourceTree = "<group>"; };
-		0000000A0000000000000039 /* HomeLife/Features/Guests/Views/GuestCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLife/Features/Guests/Views/GuestCalendarView.swift; sourceTree = "<group>"; };
-		0000000A000000000000003B /* HomeLife/Features/Guests/Views/GuestVisitRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLife/Features/Guests/Views/GuestVisitRowView.swift; sourceTree = "<group>"; };
-		0000000A000000000000003D /* HomeLife/Features/Household/ViewModels/HouseholdViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLife/Features/Household/ViewModels/HouseholdViewModel.swift; sourceTree = "<group>"; };
-		0000000A000000000000003F /* HomeLife/Features/Household/Views/AddRoommateSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLife/Features/Household/Views/AddRoommateSheet.swift; sourceTree = "<group>"; };
-		0000000A0000000000000041 /* HomeLife/Features/Household/Views/HouseholdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLife/Features/Household/Views/HouseholdView.swift; sourceTree = "<group>"; };
-		0000000A0000000000000043 /* HomeLife/Features/Root/MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLife/Features/Root/MainTabView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,41 +97,41 @@
 		000000010000000000000004 = {
 			isa = PBXGroup;
 			children = (
-				0000000A0000000000000001 /* HomeLife/App/DependencyContainer.swift */,
-				0000000A0000000000000003 /* HomeLife/App/HomeLifeApp.swift */,
-				0000000A0000000000000005 /* HomeLife/Core/Components/AvatarBadgeView.swift */,
-				0000000A0000000000000007 /* HomeLife/Core/Components/EmptyStateView.swift */,
-				0000000A0000000000000009 /* HomeLife/Core/Components/GlassCardView.swift */,
-				0000000A000000000000000B /* HomeLife/Core/Components/StatusPillView.swift */,
-				0000000A000000000000000D /* HomeLife/Core/Extensions/Date+Extensions.swift */,
-				0000000A000000000000000F /* HomeLife/Core/Theme/AppTheme.swift */,
-				0000000A0000000000000011 /* HomeLife/Data/Mock/MockDataFactory.swift */,
-				0000000A0000000000000013 /* HomeLife/Data/Repositories/InMemoryChoreRepository.swift */,
-				0000000A0000000000000015 /* HomeLife/Data/Repositories/InMemoryGuestRepository.swift */,
-				0000000A0000000000000017 /* HomeLife/Data/Repositories/InMemoryRoommateRepository.swift */,
-				0000000A0000000000000019 /* HomeLife/Domain/Models/Chore.swift */,
-				0000000A000000000000001B /* HomeLife/Domain/Models/ChoreLog.swift */,
-				0000000A000000000000001D /* HomeLife/Domain/Models/GuestVisit.swift */,
-				0000000A000000000000001F /* HomeLife/Domain/Models/Roommate.swift */,
-				0000000A0000000000000021 /* HomeLife/Domain/Repositories/ChoreRepositoryProtocol.swift */,
-				0000000A0000000000000023 /* HomeLife/Domain/Repositories/GuestRepositoryProtocol.swift */,
-				0000000A0000000000000025 /* HomeLife/Domain/Repositories/RoommateRepositoryProtocol.swift */,
-				0000000A0000000000000027 /* HomeLife/Features/Chores/ViewModels/ChoresViewModel.swift */,
-				0000000A0000000000000029 /* HomeLife/Features/Chores/Views/AddChoreSheet.swift */,
-				0000000A000000000000002B /* HomeLife/Features/Chores/Views/ChoreHistorySheet.swift */,
-				0000000A000000000000002D /* HomeLife/Features/Chores/Views/ChoreRowView.swift */,
-				0000000A000000000000002F /* HomeLife/Features/Chores/Views/ChoresView.swift */,
-				0000000A0000000000000031 /* HomeLife/Features/Dashboard/ViewModels/DashboardViewModel.swift */,
-				0000000A0000000000000033 /* HomeLife/Features/Dashboard/Views/DashboardView.swift */,
-				0000000A0000000000000035 /* HomeLife/Features/Guests/ViewModels/GuestCalendarViewModel.swift */,
-				0000000A0000000000000037 /* HomeLife/Features/Guests/Views/AddGuestSheet.swift */,
-				0000000A0000000000000039 /* HomeLife/Features/Guests/Views/GuestCalendarView.swift */,
-				0000000A000000000000003B /* HomeLife/Features/Guests/Views/GuestVisitRowView.swift */,
-				0000000A000000000000003D /* HomeLife/Features/Household/ViewModels/HouseholdViewModel.swift */,
-				0000000A000000000000003F /* HomeLife/Features/Household/Views/AddRoommateSheet.swift */,
-				0000000A0000000000000041 /* HomeLife/Features/Household/Views/HouseholdView.swift */,
-				0000000A0000000000000043 /* HomeLife/Features/Root/MainTabView.swift */,
-				000000020000000000000001 /* HomeLife/Resources/Assets.xcassets */,
+				0000000A0000000000000001 /* DependencyContainer.swift */,
+				0000000A0000000000000003 /* HomeLifeApp.swift */,
+				0000000A0000000000000005 /* AvatarBadgeView.swift */,
+				0000000A0000000000000007 /* EmptyStateView.swift */,
+				0000000A0000000000000009 /* GlassCardView.swift */,
+				0000000A000000000000000B /* StatusPillView.swift */,
+				0000000A000000000000000D /* Date+Extensions.swift */,
+				0000000A000000000000000F /* AppTheme.swift */,
+				0000000A0000000000000011 /* Chore.swift */,
+				0000000A0000000000000013 /* ChoreLog.swift */,
+				0000000A0000000000000015 /* GuestVisit.swift */,
+				0000000A0000000000000017 /* Roommate.swift */,
+				0000000A0000000000000019 /* InMemoryChoreRepository.swift */,
+				0000000A000000000000001B /* InMemoryGuestRepository.swift */,
+				0000000A000000000000001D /* InMemoryRoommateRepository.swift */,
+				0000000A000000000000001F /* MockDataFactory.swift */,
+				0000000A0000000000000021 /* ChoreRepositoryProtocol.swift */,
+				0000000A0000000000000023 /* GuestRepositoryProtocol.swift */,
+				0000000A0000000000000025 /* RoommateRepositoryProtocol.swift */,
+				0000000A0000000000000027 /* ChoresViewModel.swift */,
+				0000000A0000000000000029 /* DashboardViewModel.swift */,
+				0000000A000000000000002B /* GuestCalendarViewModel.swift */,
+				0000000A000000000000002D /* HouseholdViewModel.swift */,
+				0000000A000000000000002F /* AddChoreSheet.swift */,
+				0000000A0000000000000031 /* ChoreHistorySheet.swift */,
+				0000000A0000000000000033 /* ChoreRowView.swift */,
+				0000000A0000000000000035 /* ChoresView.swift */,
+				0000000A0000000000000037 /* DashboardView.swift */,
+				0000000A0000000000000039 /* AddGuestSheet.swift */,
+				0000000A000000000000003B /* GuestCalendarView.swift */,
+				0000000A000000000000003D /* GuestVisitRowView.swift */,
+				0000000A000000000000003F /* AddRoommateSheet.swift */,
+				0000000A0000000000000041 /* HouseholdView.swift */,
+				0000000A0000000000000043 /* MainTabView.swift */,
+				000000020000000000000001 /* Assets.xcassets */,
 				000000010000000000000005 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -172,7 +172,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1600;
-				LastUpgradeCheck = 2630;
+				LastUpgradeCheck = 1600;
 				TargetAttributes = {
 					000000010000000000000002 = {
 						CreatedOnToolsVersion = 16.0;
@@ -202,7 +202,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				000000020000000000000002 /* HomeLife/Resources/Assets.xcassets in Resources */,
+				000000020000000000000002 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -213,40 +213,40 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0000000A0000000000000002 /* HomeLife/App/DependencyContainer.swift in Sources */,
-				0000000A0000000000000004 /* HomeLife/App/HomeLifeApp.swift in Sources */,
-				0000000A0000000000000006 /* HomeLife/Core/Components/AvatarBadgeView.swift in Sources */,
-				0000000A0000000000000008 /* HomeLife/Core/Components/EmptyStateView.swift in Sources */,
-				0000000A000000000000000A /* HomeLife/Core/Components/GlassCardView.swift in Sources */,
-				0000000A000000000000000C /* HomeLife/Core/Components/StatusPillView.swift in Sources */,
-				0000000A000000000000000E /* HomeLife/Core/Extensions/Date+Extensions.swift in Sources */,
-				0000000A0000000000000010 /* HomeLife/Core/Theme/AppTheme.swift in Sources */,
-				0000000A0000000000000012 /* HomeLife/Data/Mock/MockDataFactory.swift in Sources */,
-				0000000A0000000000000014 /* HomeLife/Data/Repositories/InMemoryChoreRepository.swift in Sources */,
-				0000000A0000000000000016 /* HomeLife/Data/Repositories/InMemoryGuestRepository.swift in Sources */,
-				0000000A0000000000000018 /* HomeLife/Data/Repositories/InMemoryRoommateRepository.swift in Sources */,
-				0000000A000000000000001A /* HomeLife/Domain/Models/Chore.swift in Sources */,
-				0000000A000000000000001C /* HomeLife/Domain/Models/ChoreLog.swift in Sources */,
-				0000000A000000000000001E /* HomeLife/Domain/Models/GuestVisit.swift in Sources */,
-				0000000A0000000000000020 /* HomeLife/Domain/Models/Roommate.swift in Sources */,
-				0000000A0000000000000022 /* HomeLife/Domain/Repositories/ChoreRepositoryProtocol.swift in Sources */,
-				0000000A0000000000000024 /* HomeLife/Domain/Repositories/GuestRepositoryProtocol.swift in Sources */,
-				0000000A0000000000000026 /* HomeLife/Domain/Repositories/RoommateRepositoryProtocol.swift in Sources */,
-				0000000A0000000000000028 /* HomeLife/Features/Chores/ViewModels/ChoresViewModel.swift in Sources */,
-				0000000A000000000000002A /* HomeLife/Features/Chores/Views/AddChoreSheet.swift in Sources */,
-				0000000A000000000000002C /* HomeLife/Features/Chores/Views/ChoreHistorySheet.swift in Sources */,
-				0000000A000000000000002E /* HomeLife/Features/Chores/Views/ChoreRowView.swift in Sources */,
-				0000000A0000000000000030 /* HomeLife/Features/Chores/Views/ChoresView.swift in Sources */,
-				0000000A0000000000000032 /* HomeLife/Features/Dashboard/ViewModels/DashboardViewModel.swift in Sources */,
-				0000000A0000000000000034 /* HomeLife/Features/Dashboard/Views/DashboardView.swift in Sources */,
-				0000000A0000000000000036 /* HomeLife/Features/Guests/ViewModels/GuestCalendarViewModel.swift in Sources */,
-				0000000A0000000000000038 /* HomeLife/Features/Guests/Views/AddGuestSheet.swift in Sources */,
-				0000000A000000000000003A /* HomeLife/Features/Guests/Views/GuestCalendarView.swift in Sources */,
-				0000000A000000000000003C /* HomeLife/Features/Guests/Views/GuestVisitRowView.swift in Sources */,
-				0000000A000000000000003E /* HomeLife/Features/Household/ViewModels/HouseholdViewModel.swift in Sources */,
-				0000000A0000000000000040 /* HomeLife/Features/Household/Views/AddRoommateSheet.swift in Sources */,
-				0000000A0000000000000042 /* HomeLife/Features/Household/Views/HouseholdView.swift in Sources */,
-				0000000A0000000000000044 /* HomeLife/Features/Root/MainTabView.swift in Sources */,
+				0000000A0000000000000002 /* DependencyContainer.swift in Sources */,
+				0000000A0000000000000004 /* HomeLifeApp.swift in Sources */,
+				0000000A0000000000000006 /* AvatarBadgeView.swift in Sources */,
+				0000000A0000000000000008 /* EmptyStateView.swift in Sources */,
+				0000000A000000000000000A /* GlassCardView.swift in Sources */,
+				0000000A000000000000000C /* StatusPillView.swift in Sources */,
+				0000000A000000000000000E /* Date+Extensions.swift in Sources */,
+				0000000A0000000000000010 /* AppTheme.swift in Sources */,
+				0000000A0000000000000012 /* Chore.swift in Sources */,
+				0000000A0000000000000014 /* ChoreLog.swift in Sources */,
+				0000000A0000000000000016 /* GuestVisit.swift in Sources */,
+				0000000A0000000000000018 /* Roommate.swift in Sources */,
+				0000000A000000000000001A /* InMemoryChoreRepository.swift in Sources */,
+				0000000A000000000000001C /* InMemoryGuestRepository.swift in Sources */,
+				0000000A000000000000001E /* InMemoryRoommateRepository.swift in Sources */,
+				0000000A0000000000000020 /* MockDataFactory.swift in Sources */,
+				0000000A0000000000000022 /* ChoreRepositoryProtocol.swift in Sources */,
+				0000000A0000000000000024 /* GuestRepositoryProtocol.swift in Sources */,
+				0000000A0000000000000026 /* RoommateRepositoryProtocol.swift in Sources */,
+				0000000A0000000000000028 /* ChoresViewModel.swift in Sources */,
+				0000000A000000000000002A /* DashboardViewModel.swift in Sources */,
+				0000000A000000000000002C /* GuestCalendarViewModel.swift in Sources */,
+				0000000A000000000000002E /* HouseholdViewModel.swift in Sources */,
+				0000000A0000000000000030 /* AddChoreSheet.swift in Sources */,
+				0000000A0000000000000032 /* ChoreHistorySheet.swift in Sources */,
+				0000000A0000000000000034 /* ChoreRowView.swift in Sources */,
+				0000000A0000000000000036 /* ChoresView.swift in Sources */,
+				0000000A0000000000000038 /* DashboardView.swift in Sources */,
+				0000000A000000000000003A /* AddGuestSheet.swift in Sources */,
+				0000000A000000000000003C /* GuestCalendarView.swift in Sources */,
+				0000000A000000000000003E /* GuestVisitRowView.swift in Sources */,
+				0000000A0000000000000040 /* AddRoommateSheet.swift in Sources */,
+				0000000A0000000000000042 /* HouseholdView.swift in Sources */,
+				0000000A0000000000000044 /* MainTabView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,29 +260,10 @@
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -292,7 +273,6 @@
 				);
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
@@ -301,7 +281,6 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
-				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -314,33 +293,13 @@
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
@@ -348,8 +307,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
-				STRING_CATALOG_GENERATE_SYMBOLS = YES;
-				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_COMPILATION_MODE = "wholemodule";
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 			};
 			name = Release;
@@ -359,9 +317,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGNING_ALLOWED = YES;
 				CODE_SIGNING_REQUIRED = NO;
-				CODE_SIGN_IDENTITY = "-";
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -388,9 +346,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGNING_ALLOWED = YES;
 				CODE_SIGNING_REQUIRED = NO;
-				CODE_SIGN_IDENTITY = "-";
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -434,6 +392,7 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
 	};
 	rootObject = 000000010000000000000001 /* Project object */;
 }

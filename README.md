@@ -45,47 +45,61 @@ Uygulama, hem gelecekte **Firebase / Supabase** gibi gerçek zamanlı bulut veri
 
 ```
 HomeLife/
-├── App/
-│   ├── HomeLifeApp.swift           # @main giriş noktası
-│   └── DependencyContainer.swift   # Dependency Injection (DI) kapsayıcısı
+├── App/                            # Uygulama başlangıcı & Dependency Injection
+│   ├── HomeLifeApp.swift
+│   └── DependencyContainer.swift
 │
-├── Domain/                         # Saf iş mantığı (Framework bağımsız)
-│   ├── Models/
-│   │   ├── Roommate.swift          # Ev arkadaşı modeli
-│   │   ├── Chore.swift             # Ev işi modeli & döngü bilgisi
-│   │   ├── ChoreLog.swift          # Tamamlanma geçmişi kaydı
-│   │   └── GuestVisit.swift        # Misafir ziyareti modeli
-│   └── Repositories/               # Veri katmanı sözleşmeleri (Protocols)
-│       ├── RoommateRepositoryProtocol.swift
-│       ├── ChoreRepositoryProtocol.swift
-│       └── GuestRepositoryProtocol.swift
+├── Models/                         # Veri modelleri (Saf Swift struct'ları)
+│   ├── Chore.swift                 # Ev işi modeli & döngü bilgisi
+│   ├── ChoreLog.swift              # Tamamlanma geçmişi kaydı
+│   ├── GuestVisit.swift            # Misafir ziyareti modeli
+│   └── Roommate.swift              # Ev arkadaşı modeli
 │
-├── Data/                           # Veri sağlama ve depolama katmanı
-│   ├── Mock/
-│   │   └── MockDataFactory.swift   # Gerçekçi öğrenci evi test verileri
-│   └── Repositories/
-│       ├── InMemoryRoommateRepository.swift
-│       ├── InMemoryChoreRepository.swift
-│       └── InMemoryGuestRepository.swift
+├── ViewModels/                     # Ekran mantığı ve durum yönetimi (MVVM)
+│   ├── DashboardViewModel.swift
+│   ├── ChoresViewModel.swift
+│   ├── GuestCalendarViewModel.swift
+│   └── HouseholdViewModel.swift
 │
-├── Core/                           # Ortak UI bileşenleri ve temalar
-│   ├── Theme/
-│   │   └── AppTheme.swift          # Renk paleti, kart stilleri, degradeler
-│   ├── Components/
-│   │   ├── AvatarBadgeView.swift   # Dinamik avatar bileşeni
-│   │   ├── StatusPillView.swift    # Durum hapı (pill) bileşeni
-│   │   ├── GlassCardView.swift     # Kart kapsayıcı
-│   │   └── EmptyStateView.swift    # Boş durum görünümü
-│   └── Extensions/
-│       └── Date+Extensions.swift   # Türkçe göreceli tarih formatlayıcı
-│
-├── Features/                       # Özellik bazlı modüller (Feature-First)
+├── Views/                          # SwiftUI Görünümleri & Ekranlar
 │   ├── Root/
 │   │   └── MainTabView.swift       # 4 sekmeli alt menü
-│   ├── Dashboard/                  # Günün özeti & hızlı aksiyonlar
-│   ├── Chores/                     # Sıralı ev işleri & tur devretme
-│   ├── Guests/                     # Misafir takvimi & çakışma kontrolü
-│   └── Household/                  # Ev halkı yönetimi
+│   ├── Dashboard/
+│   │   └── DashboardView.swift     # Günün özeti & hızlı aksiyonlar
+│   ├── Chores/
+│   │   ├── ChoresView.swift        # Sıralı & sabit ev işleri listesi
+│   │   ├── ChoreRowView.swift      # Görev kartı bileşeni
+│   │   ├── AddChoreSheet.swift     # Yeni görev ekleme
+│   │   └── ChoreHistorySheet.swift # Görev tamamlama geçmişi
+│   ├── Guests/
+│   │   ├── GuestCalendarView.swift # Misafir takvimi & çakışma uyarısı
+│   │   ├── GuestVisitRowView.swift # Ziyaret satır kartı
+│   │   └── AddGuestSheet.swift     # Yeni misafir kaydı
+│   └── Household/
+│       ├── HouseholdView.swift     # Ev halkı yönetimi
+│       └── AddRoommateSheet.swift  # Yeni ev arkadaşı ekleme
+│
+├── Repositories/                   # Veri katmanı (Protocols & InMemory)
+│   ├── Protocols/
+│   │   ├── ChoreRepositoryProtocol.swift
+│   │   ├── GuestRepositoryProtocol.swift
+│   │   └── RoommateRepositoryProtocol.swift
+│   └── InMemory/
+│       ├── InMemoryChoreRepository.swift
+│       ├── InMemoryGuestRepository.swift
+│       ├── InMemoryRoommateRepository.swift
+│       └── MockDataFactory.swift
+│
+├── Common/                         # Ortak UI bileşenleri & Temalar
+│   ├── Components/
+│   │   ├── AvatarBadgeView.swift   # Dinamik avatar bileşeni
+│   │   ├── StatusPillView.swift    # Durum rozeti
+│   │   ├── GlassCardView.swift     # Kart kapsayıcı
+│   │   └── EmptyStateView.swift    # Boş durum görünümü
+│   ├── Theme/
+│   │   └── AppTheme.swift          # Renk paleti & degradeler
+│   └── Extensions/
+│       └── Date+Extensions.swift   # Türkçe tarih formatlama
 │
 └── Resources/
     └── Assets.xcassets             # Renk ve ikon katalogları
