@@ -1,6 +1,7 @@
 import SwiftUI
 
 public struct GuestCalendarView: View {
+    @EnvironmentObject private var container: DependencyContainer
     @StateObject private var viewModel: GuestCalendarViewModel
 
     public init(container: DependencyContainer) {
@@ -80,7 +81,7 @@ public struct GuestCalendarView: View {
                 }
             }
             .sheet(isPresented: $viewModel.isShowingAddSheet) {
-                AddGuestSheet(roommates: viewModel.roommates) { hostId, name, count, start, end, isOvernight, location, notes in
+                AddGuestSheet(roommates: viewModel.roommates, preferredRoommateId: container.currentRoommateId) { hostId, name, count, start, end, isOvernight, location, notes in
                     Task {
                         await viewModel.addVisit(
                             hostRoommateId: hostId,
@@ -98,9 +99,20 @@ public struct GuestCalendarView: View {
             .task {
                 await viewModel.loadData()
             }
+            .onChange(of: viewModel.isShowingAddSheet) { _, isShowing in
+                // Sheet açılırken ev arkadaşı listesi boşsa yeniden yükle
+                if isShowing && viewModel.roommates.isEmpty {
+                    Task { await viewModel.loadData() }
+                }
+            }
             .refreshable {
                 await viewModel.loadData()
             }
+            .onChange(of: container.activeHouseId) { _, _ in
+                // Oturum/ev hazır olduğunda (veya yeniden denendiğinde) verileri tazele
+                Task { await viewModel.loadData() }
+            }
+            .errorAlert($viewModel.errorMessage)
         }
     }
 

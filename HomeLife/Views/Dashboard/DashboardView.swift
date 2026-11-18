@@ -1,6 +1,7 @@
 import SwiftUI
 
 public struct DashboardView: View {
+    @EnvironmentObject private var container: DependencyContainer
     @StateObject private var viewModel: DashboardViewModel
     @ObservedObject private var languageManager = LanguageManager.shared
 
@@ -62,6 +63,11 @@ public struct DashboardView: View {
             .refreshable {
                 await viewModel.loadData()
             }
+            .onChange(of: container.activeHouseId) { _, _ in
+                // Oturum/ev hazır olduğunda (veya yeniden denendiğinde) verileri tazele
+                Task { await viewModel.loadData() }
+            }
+            .errorAlert($viewModel.errorMessage)
         }
     }
 

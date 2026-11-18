@@ -1,6 +1,7 @@
 import SwiftUI
 
 public struct HouseholdView: View {
+    @EnvironmentObject private var container: DependencyContainer
     @EnvironmentObject private var languageManager: LanguageManager
     @StateObject private var viewModel: HouseholdViewModel
 
@@ -78,6 +79,11 @@ public struct HouseholdView: View {
             .refreshable {
                 await viewModel.loadData()
             }
+            .onChange(of: container.activeHouseId) { _, _ in
+                // Oturum/ev hazır olduğunda (veya yeniden denendiğinde) verileri tazele
+                Task { await viewModel.loadData() }
+            }
+            .errorAlert($viewModel.errorMessage)
         }
     }
 

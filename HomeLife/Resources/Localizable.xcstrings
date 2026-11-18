@@ -491,6 +491,9 @@
         }
       }
     },
+    "Ev arkadaşları yükleniyor…" : {
+
+    },
     "Ev Halkı" : {
       "localizations" : {
         "en" : {
@@ -926,6 +929,9 @@
           }
         }
       }
+    },
+    "İşlem Başarısız" : {
+
     },
     "Kalacağı Yer:" : {
       "localizations" : {
@@ -1633,6 +1639,9 @@
         }
       }
     },
+    "Sunucuya bağlanılamadı" : {
+
+    },
     "Takma Ad (İsteğe bağlı)" : {
       "localizations" : {
         "en" : {
@@ -1648,6 +1657,9 @@
           }
         }
       }
+    },
+    "Tamam" : {
+
     },
     "Tamamlama ve Devir Geçmişi" : {
       "localizations" : {
@@ -1680,6 +1692,9 @@
           }
         }
       }
+    },
+    "Tekrar Dene" : {
+
     },
     "Tekrarlanma Sıklığı" : {
       "localizations" : {

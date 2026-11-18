@@ -1,6 +1,7 @@
 import SwiftUI
 
 public struct ChoresView: View {
+    @EnvironmentObject private var container: DependencyContainer
     @StateObject private var viewModel: ChoresViewModel
 
     public init(container: DependencyContainer) {
@@ -83,7 +84,7 @@ public struct ChoresView: View {
                 }
             }
             .sheet(isPresented: $viewModel.isShowingAddSheet) {
-                AddChoreSheet(roommates: viewModel.roommates) { title, desc, cat, assignType, dedicatedId, order, freq, date in
+                AddChoreSheet(roommates: viewModel.roommates, preferredRoommateId: container.currentRoommateId) { title, desc, cat, assignType, dedicatedId, order, freq, date in
                     Task {
                         await viewModel.addChore(
                             title: title,
@@ -108,9 +109,20 @@ public struct ChoresView: View {
             .task {
                 await viewModel.loadData()
             }
+            .onChange(of: viewModel.isShowingAddSheet) { _, isShowing in
+                // Sheet açılırken ev arkadaşı listesi boşsa yeniden yükle
+                if isShowing && viewModel.roommates.isEmpty {
+                    Task { await viewModel.loadData() }
+                }
+            }
             .refreshable {
                 await viewModel.loadData()
             }
+            .onChange(of: container.activeHouseId) { _, _ in
+                // Oturum/ev hazır olduğunda (veya yeniden denendiğinde) verileri tazele
+                Task { await viewModel.loadData() }
+            }
+            .errorAlert($viewModel.errorMessage)
         }
     }
 

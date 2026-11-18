@@ -3,6 +3,8 @@ import SwiftUI
 public struct AddChoreSheet: View {
     @Environment(\.dismiss) private var dismiss
     public let roommates: [Roommate]
+    /// Varsayılan seçilecek ev arkadaşı (oturumdaki "Ben" kullanıcısı)
+    public let preferredRoommateId: UUID?
     public let onSave: (String, String, ChoreCategory, ChoreAssignmentType, UUID?, [UUID], ChoreFrequency, Date) -> Void
 
     @State private var title: String = ""
@@ -16,12 +18,47 @@ public struct AddChoreSheet: View {
 
     public init(
         roommates: [Roommate],
+        preferredRoommateId: UUID? = nil,
         onSave: @escaping (String, String, ChoreCategory, ChoreAssignmentType, UUID?, [UUID], ChoreFrequency, Date) -> Void
     ) {
         self.roommates = roommates
+        self.preferredRoommateId = preferredRoommateId
         self.onSave = onSave
-        _dedicatedAssigneeId = State(initialValue: roommates.first?.id)
+        _dedicatedAssigneeId = State(initialValue: Self.defaultRoommateId(in: roommates, preferred: preferredRoommateId))
         _selectedRoommateIds = State(initialValue: roommates.map { $0.id })
+    }
+
+    /// Sıralı döngüde seçim yapılmadıysa tüm ev halkı sıraya girer
+    private var finalRotationOrder: [UUID] {
+        selectedRoommateIds.isEmpty ? roommates.map { $0.id } : selectedRoommateIds
+    }
+
+    private var canSave: Bool {
+        guard !title.trimmingCharacters(in: .whitespaces).isEmpty else { return false }
+        switch assignmentType {
+        case .dedicated: return dedicatedAssigneeId != nil
+        case .rotating: return !finalRotationOrder.isEmpty
+        }
+    }
+
+    /// Tercih edilen kişi listede varsa onu, yoksa ilk kişiyi seçer
+    private static func defaultRoommateId(in roommates: [Roommate], preferred: UUID?) -> UUID? {
+        if let preferred, roommates.contains(where: { $0.id == preferred }) {
+            return preferred
+        }
+        return roommates.first?.id
+    }
+
+    /// Liste geç yüklendiğinde veya seçim geçersiz kaldığında varsayılanları yeniden atar
+    private func ensureValidSelection() {
+        let ids = Set(roommates.map { $0.id })
+        if dedicatedAssigneeId == nil || !ids.contains(dedicatedAssigneeId!) {
+            dedicatedAssigneeId = Self.defaultRoommateId(in: roommates, preferred: preferredRoommateId)
+        }
+        selectedRoommateIds.removeAll { !ids.contains($0) }
+        if selectedRoommateIds.isEmpty {
+            selectedRoommateIds = roommates.map { $0.id }
+        }
     }
 
     public var body: some View {
@@ -58,7 +95,15 @@ public struct AddChoreSheet: View {
                     .pickerStyle(.segmented)
                 }
 
-                if assignmentType == .dedicated {
+                if roommates.isEmpty {
+                    Section {
+                        HStack(spacing: 8) {
+                            ProgressView()
+                            Text("Ev arkadaşları yükleniyor…")
+                                .foregroundColor(.secondary)
+                        }
+                    }
+                } else if assignmentType == .dedicated {
                     Section(
                         header: Text("Sorumlu Ev Arkadaşı"),
                         footer: Text("Bu iş seçilen kişinin daimi sorumluluğunda kalır. Görev tamamlandığında sıra değişmez.")
@@ -147,12 +192,15 @@ public struct AddChoreSheet: View {
                 }
                 ToolbarItem(placement: .confirmationAction) {
                     Button("Kaydet") {
-                        let finalOrder = selectedRoommateIds.isEmpty ? roommates.map { $0.id } : selectedRoommateIds
-                        onSave(title, description, category, assignmentType, dedicatedAssigneeId, finalOrder, frequency, dueDate)
+                        onSave(title, description, category, assignmentType, dedicatedAssigneeId, finalRotationOrder, frequency, dueDate)
                         dismiss()
                     }
-                    .disabled(title.trimmingCharacters(in: .whitespaces).isEmpty)
+                    .disabled(!canSave)
                 }
+            }
+            .onAppear(perform: ensureValidSelection)
+            .onChange(of: roommates) { _, _ in
+                ensureValidSelection()
             }
         }
     }

@@ -40,5 +40,20 @@ public struct MainTabView: View {
                 .tag(TabItem.household)
         }
         .tint(AppTheme.primary)
+        .safeAreaInset(edge: .top, spacing: 0) {
+            if let message = container.sessionErrorMessage {
+                ErrorBannerView(
+                    message: message,
+                    onRetry: {
+                        Task { await container.retryBootstrap() }
+                    },
+                    onDismiss: {
+                        container.clearSessionError()
+                    }
+                )
+                .transition(.move(edge: .top).combined(with: .opacity))
+            }
+        }
+        .animation(.easeInOut, value: container.sessionErrorMessage)
     }
 }
