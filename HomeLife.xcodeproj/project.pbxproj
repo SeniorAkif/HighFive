@@ -59,6 +59,14 @@
 		0000000A0000000000000058 /* HomeLife/Repositories/Firestore/FirestoreRoommateRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0000000A0000000000000057 /* HomeLife/Repositories/Firestore/FirestoreRoommateRepository.swift */; };
 		0000000A000000000000005A /* HomeLife/Services/FirebaseErrorLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0000000A0000000000000059 /* HomeLife/Services/FirebaseErrorLog.swift */; };
 		0000000A000000000000005C /* HomeLife/Common/Components/ErrorAlertModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0000000A000000000000005B /* HomeLife/Common/Components/ErrorAlertModifier.swift */; };
+		0000000A000000000000005E /* HomeLife/Models/PantryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0000000A000000000000005D /* HomeLife/Models/PantryItem.swift */; };
+		0000000A0000000000000060 /* HomeLife/Repositories/Protocols/PantryRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0000000A000000000000005F /* HomeLife/Repositories/Protocols/PantryRepositoryProtocol.swift */; };
+		0000000A0000000000000062 /* HomeLife/Repositories/InMemory/InMemoryPantryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0000000A0000000000000061 /* HomeLife/Repositories/InMemory/InMemoryPantryRepository.swift */; };
+		0000000A0000000000000064 /* HomeLife/Repositories/Firestore/FirestorePantryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0000000A0000000000000063 /* HomeLife/Repositories/Firestore/FirestorePantryRepository.swift */; };
+		0000000A0000000000000066 /* HomeLife/ViewModels/PantryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0000000A0000000000000065 /* HomeLife/ViewModels/PantryViewModel.swift */; };
+		0000000A0000000000000068 /* HomeLife/Views/Pantry/PantryItemRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0000000A0000000000000067 /* HomeLife/Views/Pantry/PantryItemRowView.swift */; };
+		0000000A000000000000006A /* HomeLife/Views/Pantry/AddPantryItemSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0000000A0000000000000069 /* HomeLife/Views/Pantry/AddPantryItemSheet.swift */; };
+		0000000A000000000000006C /* HomeLife/Views/Pantry/PantryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0000000A000000000000006B /* HomeLife/Views/Pantry/PantryView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -112,6 +120,14 @@
 		0000000A0000000000000057 /* HomeLife/Repositories/Firestore/FirestoreRoommateRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLife/Repositories/Firestore/FirestoreRoommateRepository.swift; sourceTree = "<group>"; };
 		0000000A0000000000000059 /* HomeLife/Services/FirebaseErrorLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLife/Services/FirebaseErrorLog.swift; sourceTree = "<group>"; };
 		0000000A000000000000005B /* HomeLife/Common/Components/ErrorAlertModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLife/Common/Components/ErrorAlertModifier.swift; sourceTree = "<group>"; };
+		0000000A000000000000005D /* HomeLife/Models/PantryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLife/Models/PantryItem.swift; sourceTree = "<group>"; };
+		0000000A000000000000005F /* HomeLife/Repositories/Protocols/PantryRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLife/Repositories/Protocols/PantryRepositoryProtocol.swift; sourceTree = "<group>"; };
+		0000000A0000000000000061 /* HomeLife/Repositories/InMemory/InMemoryPantryRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLife/Repositories/InMemory/InMemoryPantryRepository.swift; sourceTree = "<group>"; };
+		0000000A0000000000000063 /* HomeLife/Repositories/Firestore/FirestorePantryRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLife/Repositories/Firestore/FirestorePantryRepository.swift; sourceTree = "<group>"; };
+		0000000A0000000000000065 /* HomeLife/ViewModels/PantryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLife/ViewModels/PantryViewModel.swift; sourceTree = "<group>"; };
+		0000000A0000000000000067 /* HomeLife/Views/Pantry/PantryItemRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLife/Views/Pantry/PantryItemRowView.swift; sourceTree = "<group>"; };
+		0000000A0000000000000069 /* HomeLife/Views/Pantry/AddPantryItemSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLife/Views/Pantry/AddPantryItemSheet.swift; sourceTree = "<group>"; };
+		0000000A000000000000006B /* HomeLife/Views/Pantry/PantryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLife/Views/Pantry/PantryView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +194,14 @@
 				0000000A0000000000000041 /* HomeLife/Views/Household/AddRoommateSheet.swift */,
 				0000000A0000000000000043 /* HomeLife/Views/Household/HouseholdView.swift */,
 				0000000A0000000000000045 /* HomeLife/Views/Root/MainTabView.swift */,
+				0000000A000000000000005D /* HomeLife/Models/PantryItem.swift */,
+				0000000A000000000000005F /* HomeLife/Repositories/Protocols/PantryRepositoryProtocol.swift */,
+				0000000A0000000000000061 /* HomeLife/Repositories/InMemory/InMemoryPantryRepository.swift */,
+				0000000A0000000000000063 /* HomeLife/Repositories/Firestore/FirestorePantryRepository.swift */,
+				0000000A0000000000000065 /* HomeLife/ViewModels/PantryViewModel.swift */,
+				0000000A0000000000000067 /* HomeLife/Views/Pantry/PantryItemRowView.swift */,
+				0000000A0000000000000069 /* HomeLife/Views/Pantry/AddPantryItemSheet.swift */,
+				0000000A000000000000006B /* HomeLife/Views/Pantry/PantryView.swift */,
 				000000020000000000000001 /* HomeLife/Resources/Assets.xcassets */,
 				000000020000000000000003 /* HomeLife/Resources/Localizable.xcstrings */,
 				000000010000000000000005 /* Products */,
@@ -267,6 +291,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0000000A000000000000005E /* HomeLife/Models/PantryItem.swift in Sources */,
+				0000000A0000000000000060 /* HomeLife/Repositories/Protocols/PantryRepositoryProtocol.swift in Sources */,
+				0000000A0000000000000062 /* HomeLife/Repositories/InMemory/InMemoryPantryRepository.swift in Sources */,
+				0000000A0000000000000064 /* HomeLife/Repositories/Firestore/FirestorePantryRepository.swift in Sources */,
+				0000000A0000000000000066 /* HomeLife/ViewModels/PantryViewModel.swift in Sources */,
+				0000000A0000000000000068 /* HomeLife/Views/Pantry/PantryItemRowView.swift in Sources */,
+				0000000A000000000000006A /* HomeLife/Views/Pantry/AddPantryItemSheet.swift in Sources */,
+				0000000A000000000000006C /* HomeLife/Views/Pantry/PantryView.swift in Sources */,
 				0000000A0000000000000002 /* HomeLife/App/DependencyContainer.swift in Sources */,
 				0000000A0000000000000004 /* HomeLife/App/HomeLifeApp.swift in Sources */,
 				0000000A0000000000000006 /* HomeLife/Common/Components/AvatarBadgeView.swift in Sources */,

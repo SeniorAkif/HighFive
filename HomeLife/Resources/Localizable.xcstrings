@@ -1,6 +1,9 @@
 {
   "sourceLanguage" : "tr",
   "strings" : {
+    "" : {
+
+    },
     "(%lld guests)" : {
 
     },
@@ -25,13 +28,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "%1 - %2"
+            "value" : "%1$@ - %2$@"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "%1 - %2"
+            "value" : "%1$@ - %2$@"
           }
         }
       }
@@ -41,13 +44,23 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "%1 - %2 (%3)"
+            "value" : "%1$@ - %2$@ (%3$@)"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "%1 - %2 (%3)"
+            "value" : "%1$@ - %2$@ (%3$@)"
+          }
+        }
+      }
+    },
+    "%@ %@" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ %2$@"
           }
         }
       }
@@ -57,13 +70,23 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "%1 • %2"
+            "value" : "%1$@ • %2$@"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "%1 • %2"
+            "value" : "%1$@ • %2$@"
+          }
+        }
+      }
+    },
+    "%lld %@ expiring soon" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$lld %2$@ expiring soon"
           }
         }
       }
@@ -99,6 +122,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "%lld Kişi"
+          }
+        }
+      }
+    },
+    "%lld ürünün SKT'si dolmak üzere" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld items expiring soon"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld ürünün SKT'si dolmak üzere"
           }
         }
       }
@@ -231,6 +270,38 @@
         }
       }
     },
+    "Arama veya filtrelere uygun ürün yok." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No items match your search or filters."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Arama veya filtrelere uygun ürün yok."
+          }
+        }
+      }
+    },
+    "Artır" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Increase"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Artır"
+          }
+        }
+      }
+    },
     "Atanmamış" : {
       "localizations" : {
         "en" : {
@@ -291,6 +362,38 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ayrılış Tarihi"
+          }
+        }
+      }
+    },
+    "Azalt" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Decrease"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Azalt"
+          }
+        }
+      }
+    },
+    "Birim" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unit"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Birim"
           }
         }
       }
@@ -391,6 +494,86 @@
         }
       }
     },
+    "Bu özellik yakında aktifleşecek" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This feature is coming soon"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bu özellik yakında aktifleşecek"
+          }
+        }
+      }
+    },
+    "Buzdolabı & Kiler" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fridge & Pantry"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Buzdolabı & Kiler"
+          }
+        }
+      }
+    },
+    "Buzdolabı Boş" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fridge Is Empty"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Buzdolabı Boş"
+          }
+        }
+      }
+    },
+    "Buzdolabı ve kilerdeki ürünleri ekleyerek neyin bittiğini ve SKT'si yaklaşanları takip et." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Add the items in your fridge and pantry to track what's running out and what's about to expire."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Buzdolabı ve kilerdeki ürünleri ekleyerek neyin bittiğini ve SKT'si yaklaşanları takip et."
+          }
+        }
+      }
+    },
+    "Buzdolabının veya market fişinin fotoğrafını çek, ürünler otomatik eklensin." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Snap a photo of your fridge or grocery receipt and items will be added automatically."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Buzdolabının veya market fişinin fotoğrafını çek, ürünler otomatik eklensin."
+          }
+        }
+      }
+    },
     "Dahil Olduğu:" : {
       "localizations" : {
         "en" : {
@@ -475,6 +658,38 @@
         }
       }
     },
+    "Düzenle" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Edit"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Düzenle"
+          }
+        }
+      }
+    },
+    "Ekleyen:" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Added by:"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ekleyen:"
+          }
+        }
+      }
+    },
     "Emoji Seç:" : {
       "localizations" : {
         "en" : {
@@ -492,7 +707,20 @@
       }
     },
     "Ev arkadaşları yükleniyor…" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Loading roommates…"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ev arkadaşları yükleniyor…"
+          }
+        }
+      }
     },
     "Ev Halkı" : {
       "localizations" : {
@@ -671,6 +899,38 @@
         }
       }
     },
+    "Filtreleri Temizle" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clear Filters"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Filtreleri Temizle"
+          }
+        }
+      }
+    },
+    "Fotoğraf Yükle (AI ile Otomatik Ekle)" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Upload Photo (Auto-Add with AI)"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fotoğraf Yükle (AI ile Otomatik Ekle)"
+          }
+        }
+      }
+    },
     "Geliş Tarihi" : {
       "localizations" : {
         "en" : {
@@ -827,6 +1087,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Görevi Tamamladım"
+          }
+        }
+      }
+    },
+    "Göster" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Show"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Göster"
           }
         }
       }
@@ -1007,13 +1283,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Category: %1 • Frequency: %2"
+            "value" : "Category: %1$@ • Frequency: %2$@"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Kategori: %1 • Sıklık: %2"
+            "value" : "Kategori: %1$@ • Sıklık: %2$@"
           }
         }
       }
@@ -1046,6 +1322,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Kayıtlı Misafir Yok"
+          }
+        }
+      }
+    },
+    "Kim Ekledi?" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Who Added It?"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kim Ekledi?"
           }
         }
       }
@@ -1110,6 +1402,54 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Kişiyi Kaldır"
+          }
+        }
+      }
+    },
+    "Listede Tut (Tükendi)" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Keep in List (Out of Stock)"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Listede Tut (Tükendi)"
+          }
+        }
+      }
+    },
+    "Listeden Kaldır" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Remove from List"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Listeden Kaldır"
+          }
+        }
+      }
+    },
+    "Miktar" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quantity"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Miktar"
           }
         }
       }
@@ -1226,6 +1566,22 @@
         }
       }
     },
+    "Mutfak" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kitchen"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mutfak"
+          }
+        }
+      }
+    },
     "MVVM ve Repository mimarimiz sayesinde aşağıdaki özellikler kolayca entegre edilebilir:" : {
       "localizations" : {
         "en" : {
@@ -1254,6 +1610,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nerede Kalacak? (örn. Kendi odam, Salon)"
+          }
+        }
+      }
+    },
+    "Nerede?" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Where?"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nerede?"
           }
         }
       }
@@ -1371,6 +1743,22 @@
         }
       }
     },
+    "Ortak Ev" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Shared Home"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ortak Ev"
+          }
+        }
+      }
+    },
     "Ortak Harcama & Masraf Paylaşımı (Kim kime borçlu?)" : {
       "localizations" : {
         "en" : {
@@ -1478,6 +1866,28 @@
         }
       }
     },
+    "Saklama Yeri" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Storage"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Saklama Yeri"
+          }
+        }
+      }
+    },
+    "Show" : {
+
+    },
+    "Show All" : {
+
+    },
     "Sıra:" : {
       "localizations" : {
         "en" : {
@@ -1555,6 +1965,54 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sırayla Yapacak Ev Arkadaşları"
+          }
+        }
+      }
+    },
+    "SKT" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Expiry"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SKT"
+          }
+        }
+      }
+    },
+    "SKT Ekle" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Add Expiry Date"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SKT Ekle"
+          }
+        }
+      }
+    },
+    "Son Kullanma Tarihi" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Expiration Date"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Son Kullanma Tarihi"
           }
         }
       }
@@ -1747,6 +2205,150 @@
         }
       }
     },
+    "Tümünü Göster" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Show All"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tümünü Göster"
+          }
+        }
+      }
+    },
+    "Ürün Adı (örn. Süt, Domates)" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Item Name (e.g. Milk, Tomatoes)"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ürün Adı (örn. Süt, Domates)"
+          }
+        }
+      }
+    },
+    "Ürün ara" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Search items"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ürün ara"
+          }
+        }
+      }
+    },
+    "Ürün Bilgileri" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Item Details"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ürün Bilgileri"
+          }
+        }
+      }
+    },
+    "Ürün Bulunamadı" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No Items Found"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ürün Bulunamadı"
+          }
+        }
+      }
+    },
+    "Ürün Ekle" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Add Item"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ürün Ekle"
+          }
+        }
+      }
+    },
+    "Ürünü Düzenle" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Edit Item"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ürünü Düzenle"
+          }
+        }
+      }
+    },
+    "Ürünü Sil" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Delete Item"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ürünü Sil"
+          }
+        }
+      }
+    },
+    "Ürünün miktarı sıfıra düştü. Listeden kaldırabilir veya tekrar almak için “Tükendi” olarak tutabilirsin." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This item's quantity reached zero. You can remove it from the list or keep it marked “Out of Stock” as a reminder to buy more."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ürünün miktarı sıfıra düştü. Listeden kaldırabilir veya tekrar almak için “Tükendi” olarak tutabilirsin."
+          }
+        }
+      }
+    },
     "Uygulama Dili" : {
       "localizations" : {
         "en" : {
@@ -1775,6 +2377,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Vazgeç"
+          }
+        }
+      }
+    },
+    "Yakında (AI)" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Coming Soon (AI)"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yakında (AI)"
           }
         }
       }
@@ -1903,6 +2521,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Yeni Misafir Kaydı"
+          }
+        }
+      }
+    },
+    "Yeni Ürün Ekle" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Add New Item"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yeni Ürün Ekle"
           }
         }
       }

@@ -8,6 +8,7 @@ public final class DependencyContainer: ObservableObject {
     public let roommateRepository: any RoommateRepositoryProtocol
     public let choreRepository: any ChoreRepositoryProtocol
     public let guestRepository: any GuestRepositoryProtocol
+    public let pantryRepository: any PantryRepositoryProtocol
     public let analyticsLogger: any AnalyticsLoggerProtocol
 
     /// Canlı uygulamada Firebase oturumu; önizlemelerde nil
@@ -26,6 +27,7 @@ public final class DependencyContainer: ObservableObject {
         roommateRepository: any RoommateRepositoryProtocol = InMemoryRoommateRepository(),
         choreRepository: any ChoreRepositoryProtocol = InMemoryChoreRepository(),
         guestRepository: any GuestRepositoryProtocol = InMemoryGuestRepository(),
+        pantryRepository: any PantryRepositoryProtocol = InMemoryPantryRepository(),
         analyticsLogger: any AnalyticsLoggerProtocol = NoopAnalyticsLogger(),
         authManager: AuthManager? = nil,
         houseSession: HouseSessionManager? = nil,
@@ -34,6 +36,7 @@ public final class DependencyContainer: ObservableObject {
         self.roommateRepository = roommateRepository
         self.choreRepository = choreRepository
         self.guestRepository = guestRepository
+        self.pantryRepository = pantryRepository
         self.analyticsLogger = analyticsLogger
         self.authManager = authManager
         self.houseSession = houseSession
@@ -52,6 +55,7 @@ public final class DependencyContainer: ObservableObject {
             roommateRepository: FirestoreRoommateRepository(db: db, session: session),
             choreRepository: FirestoreChoreRepository(db: db, session: session, analytics: analytics),
             guestRepository: FirestoreGuestRepository(db: db, session: session, analytics: analytics),
+            pantryRepository: FirestorePantryRepository(db: db, session: session, analytics: analytics),
             analyticsLogger: analytics,
             authManager: authManager,
             houseSession: session,

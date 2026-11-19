@@ -10,6 +10,7 @@ import FirebaseFirestore
 /// houses/{houseId}/chore_logs/{id}
 /// houses/{houseId}/guest_visits/{id}
 /// houses/{houseId}/activity_logs/{id}
+/// houses/{houseId}/pantry_items/{id}
 public enum FirestorePaths {
     public static let users = "users"
     public static let houses = "houses"
@@ -18,6 +19,7 @@ public enum FirestorePaths {
     public static let choreLogs = "chore_logs"
     public static let guestVisits = "guest_visits"
     public static let activityLogs = "activity_logs"
+    public static let pantryItems = "pantry_items"
 
     public static func user(_ uid: String, db: Firestore) -> DocumentReference {
         db.collection(users).document(uid)

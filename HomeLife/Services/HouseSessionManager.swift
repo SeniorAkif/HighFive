@@ -137,6 +137,7 @@ public actor HouseSessionManager {
         let chores: [Chore]
         let guestVisits: [GuestVisit]
         let choreLogs: [ChoreLog]
+        let pantryItems: [PantryItem]
         let mode: HouseMode
         let ownerRoommateId: UUID
 
@@ -147,6 +148,7 @@ public actor HouseSessionManager {
             chores = []
             guestVisits = []
             choreLogs = []
+            pantryItems = []
             mode = .personal
             ownerRoommateId = owner.id
         case .sampleData:
@@ -154,6 +156,7 @@ public actor HouseSessionManager {
             chores = MockDataFactory.createChores()
             guestVisits = MockDataFactory.createGuestVisits()
             choreLogs = MockDataFactory.createInitialLogs()
+            pantryItems = MockDataFactory.createPantryItems()
             mode = .shared
             ownerRoommateId = MockDataFactory.roommateAhmetId
         }
@@ -179,6 +182,9 @@ public actor HouseSessionManager {
         }
         for log in choreLogs {
             batch.setData(try encoder.encode(log), forDocument: houseRef.collection(FirestorePaths.choreLogs).document(log.id.uuidString))
+        }
+        for item in pantryItems {
+            batch.setData(try encoder.encode(item), forDocument: houseRef.collection(FirestorePaths.pantryItems).document(item.id.uuidString))
         }
 
         batch.setData([

@@ -151,6 +151,74 @@ public struct MockDataFactory {
         ]
     }
 
+    public static func createPantryItems() -> [PantryItem] {
+        let calendar = Calendar.current
+        let today = Date()
+        func days(_ value: Int) -> Date { calendar.date(byAdding: .day, value: value, to: today) ?? today }
+
+        return [
+            PantryItem(
+                id: UUID(uuidString: "CCCC3333-0000-0000-0000-000000000001")!,
+                name: "Süt",
+                quantity: 1,
+                unit: .liter,
+                category: .dairy,
+                location: .fridge,
+                expirationDate: days(1),
+                addedByRoommateId: roommateAhmetId
+            ),
+            PantryItem(
+                id: UUID(uuidString: "CCCC3333-0000-0000-0000-000000000002")!,
+                name: "Yoğurt",
+                quantity: 1,
+                unit: .pack,
+                category: .dairy,
+                location: .fridge,
+                expirationDate: days(-1),
+                addedByRoommateId: roommateMehmetId
+            ),
+            PantryItem(
+                id: UUID(uuidString: "CCCC3333-0000-0000-0000-000000000003")!,
+                name: "Domates",
+                quantity: 6,
+                unit: .piece,
+                category: .produce,
+                location: .fridge,
+                expirationDate: days(5),
+                addedByRoommateId: roommateBarisId
+            ),
+            PantryItem(
+                id: UUID(uuidString: "CCCC3333-0000-0000-0000-000000000004")!,
+                name: "Tavuk Göğsü",
+                quantity: 500,
+                unit: .gram,
+                category: .meat,
+                location: .freezer,
+                expirationDate: days(30),
+                addedByRoommateId: roommateAhmetId
+            ),
+            PantryItem(
+                id: UUID(uuidString: "CCCC3333-0000-0000-0000-000000000005")!,
+                name: "Makarna",
+                quantity: 3,
+                unit: .pack,
+                category: .staples,
+                location: .pantry,
+                addedByRoommateId: roommateMehmetId
+            ),
+            PantryItem(
+                id: UUID(uuidString: "CCCC3333-0000-0000-0000-000000000006")!,
+                name: "Maden Suyu",
+                quantity: 4,
+                unit: .bottle,
+                category: .beverages,
+                location: .pantry,
+                expirationDate: days(120),
+                addedByRoommateId: roommateBarisId
+            )
+        ]
+    }
+
     public static func createInitialLogs() -> [ChoreLog] {
         let calendar = Calendar.current
         let today = Date()

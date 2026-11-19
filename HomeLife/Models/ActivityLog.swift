@@ -6,7 +6,7 @@ public enum ActivityActionType: String, Codable, CaseIterable, Identifiable {
     case guestAdded = "guest_added"
     case guestRemoved = "guest_removed"
     case choreCompleted = "chore_completed"
-    /// İleride buzdolabı / alışveriş modülü için ayrılmıştır
+    /// Akıllı Buzdolabı & Kiler modülüne yeni ürün eklendi
     case fridgeItemAdded = "fridge_item_added"
 
     public var id: String { rawValue }

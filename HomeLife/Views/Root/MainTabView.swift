@@ -8,6 +8,7 @@ public struct MainTabView: View {
         case dashboard
         case chores
         case guests
+        case pantry
         case household
     }
 
@@ -32,6 +33,12 @@ public struct MainTabView: View {
                     Label("Misafirler", systemImage: "calendar")
                 }
                 .tag(TabItem.guests)
+
+            PantryView(container: container)
+                .tabItem {
+                    Label("Mutfak", systemImage: "refrigerator.fill")
+                }
+                .tag(TabItem.pantry)
 
             HouseholdView(container: container)
                 .tabItem {
